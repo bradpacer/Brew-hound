@@ -3,12 +3,12 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
 <section class="homePage">
-	<h2> </h2>
-	<c:forEach var="breweryList" items="${breweries}" varStatus="loop">
+	<h2>${breweries.get(0).name } </h2>
+	<c:forEach var="brewery" items="${breweries}" varStatus="loop">
 		<div class="breweries-div">
 			<div class="img-div">
-				<c:url var="breweryImg" value="/img/breweries/${breweries.imageName}">
-				</c:url>
+				<c:url var="breweryImg" value="img/breweries/${brewery.imagePath}"/>
+				<img src="${breweryImg}"/>
 			</div>
 		</div>
 	</c:forEach>

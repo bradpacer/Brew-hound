@@ -10,6 +10,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.techelevator.capstone.dao.BreweryDao;
+import com.techelevator.capstone.model.Brewery;
+
 @Controller
 public class BreweryListController {
 	private BreweryDao breweryDao;
@@ -22,8 +25,7 @@ public class BreweryListController {
 	
 	@RequestMapping(path = "/breweryList", method = RequestMethod.GET)
 	public String displayBreweryList(HttpServletRequest request) {
-		// NEED TO CREATE BREWERY LIST WITH DAO OBJECT
-		List<Brewery> breweryList = new ArrayList<>(); // NEED TO ADD BREWERY OBJECT TO MODEL
+		List<Brewery> breweryList = breweryDao.getAllBreweries();
 		request.setAttribute("breweries", breweryList);
 		
 		return "breweryList";
