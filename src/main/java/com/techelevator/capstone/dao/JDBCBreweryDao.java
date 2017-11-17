@@ -29,9 +29,7 @@ public class JDBCBreweryDao implements BreweryDao {
 		String sqlSelectBreweries = "SELECT * FROM brewery";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBreweries);
 		while(results.next()) {
-			Brewery thisBrewery = new Brewery();
-			thisBrewery.setName(results.getString("name"));
-			thisBrewery.setImagePath(results.getString("image_path"));
+			Brewery thisBrewery = mapBreweryToRow(results);
 			breweryList.add(thisBrewery);
 		}
 		return breweryList;
@@ -43,6 +41,19 @@ public class JDBCBreweryDao implements BreweryDao {
 		return null;
 	}
 
+	private Brewery mapBreweryToRow(SqlRowSet results) {
+		Brewery thisBrewery = new Brewery();
+		thisBrewery.setBreweryId(results.getInt("brewery_id"));
+		thisBrewery.setLocationId(results.getInt("location_id"));
+		thisBrewery.setName(results.getString("name"));
+		thisBrewery.setAddress(results.getString("address"));
+		thisBrewery.setLatitude(results.getString("latitude"));
+		thisBrewery.setLongitude(results.getString("longitude"));
+		thisBrewery.setDescription(results.getString("description"));
+		thisBrewery.setYearFounded(results.getInt("year_founded"));
+		thisBrewery.setImagePath(results.getString("image_path"));
+		return thisBrewery;
+	}
 
 	
 }
