@@ -6,6 +6,22 @@ BEGIN;
   
 -- CREATE statements go here
 
+-- TABLE location 
+CREATE SEQUENCE location_location_id_seq
+  INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;
+  
+CREATE TABLE location (
+	location_id INTEGER DEFAULT nextval('location_location_id_seq'::regclass) NOT NULL,
+	city varchar(30) NOT NULL,
+	state varchar(30) NOT NULL,
+	
+	CONSTRAINT pk_location_location_id PRIMARY KEY (location_id)
+);
+
+
 -- TABLE user
 CREATE SEQUENCE users_users_id_seq
   INCREMENT BY 1
@@ -33,7 +49,7 @@ CREATE TABLE brewery (
 	brewery_id INTEGER DEFAULT nextval('brewery_brewery_id_seq'::regclass) NOT NULL,
 	name varchar(30) NOT NULL,
 	location_id integer NOT NULL,
-	address varchar(80) NOT NULL,
+	address varchar(200) NOT NULL,
 	latitude varchar(30) NOT NULL,
 	longitude varchar(30) NOT NULL,
 	description TEXT NOT NULL,
@@ -58,7 +74,7 @@ CREATE TABLE beer (
 	description TEXT NOT NULL,
 	beer_type varchar(20) NOT NULL,
 	abv REAL NOT NULL,
-	ibu REAL,
+	ibu INTEGER,
 	glass_type varchar(30),
 	
 	CONSTRAINT pk_beer_beer_id PRIMARY KEY (beer_id),
@@ -84,20 +100,6 @@ CREATE TABLE review (
 	CONSTRAINT fk_review_users FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
 
--- TABLE location 
-CREATE SEQUENCE location_location_id_seq
-  INCREMENT BY 1
-  NO MAXVALUE
-  NO MINVALUE
-  CACHE 1;
-  
-CREATE TABLE review (
-	location_id INTEGER DEFAULT nextval('location_location_id_seq'::regclass) NOT NULL,
-	city varchar(30) NOT NULL,
-	state varchar(30) NOT NULL,
-	
-	CONSTRAINT pk_location_location_id PRIMARY KEY (location_id),
-);
 
 
 COMMIT;
