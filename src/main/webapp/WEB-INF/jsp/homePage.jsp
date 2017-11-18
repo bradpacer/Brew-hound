@@ -3,7 +3,7 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
 
 <section class="homePage">
-	<h2> </h2>
+	<h2 class="center">Welcome to BrewHound</h2>
 
 </section>
 
