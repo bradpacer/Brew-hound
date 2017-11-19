@@ -37,25 +37,6 @@ li a {
 	list-style: none;
 }
 
-nav {
-	background-color: black;
-	width: 100%;
-}
-
-nav ul {
-	width: 100%;
-}
-
-nav ul li {
-	display: inline-block;
-	background-color: black;
-	list-style: none;
-}
-
-nav:after {
-	clear: both;
-}
-
 li a:hover {
 	text-decoration: underline;
 }
