@@ -8,8 +8,8 @@
 		<c:url var="formType" value="/login" />
 		<form method="POST" action="${formType}">
 			<div class="form-group">
-				<label for="userName">Username: </label>
-				<input type="text" id="userName" name="userName" placeHolder="Username" class="form-control" />
+				<label for="username">Username: </label>
+				<input type="text" id="username" name="username" placeHolder="Username" class="form-control" />
 			</div>
 			<div class="form-group">
 				<label for="password">Password: </label>
