@@ -31,5 +31,10 @@ public class BreweryListController {
 		return "breweryList";
 	}
 	
+	@RequestMapping(path = "/addBrewery", method = RequestMethod.GET)
+	public String displayAddBreweryForm() {
+		return "addBrewery";
+	}
+	
 
 }
