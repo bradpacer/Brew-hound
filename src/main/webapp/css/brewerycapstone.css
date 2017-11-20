@@ -1,5 +1,5 @@
 body {
-	background-color: #ffffff;
+	background-color: #cccccc;
 	font-family: sans-serif;
 	margin: 0;
 }
@@ -9,6 +9,25 @@ body {
 }
 
 .center {
+	text-align: center;
+}
+
+.img-div {
+	display: inline-block;
+	width: 296px;
+	height: 418px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	margin-right: 0px;
+	margin-left: 28px;
+/*	border: 5px solid #000000; */
+}
+
+h2{ 
+	font-size: 25px;
+	font-family: "Arial";
 	text-align: center;
 }
 
@@ -43,14 +62,6 @@ li a:hover {
 
 .park-div {
 	
-}
-
-.img-div {
-	display: inline-block;
-	width: 525px;
-	height:360px;
-	margin-top: 10px;
-	margin-bottom: 10px;
 }
 
 .text-div {
