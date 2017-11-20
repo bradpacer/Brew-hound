@@ -22,6 +22,14 @@ public class JDBCBreweryDao implements BreweryDao {
 	public JDBCBreweryDao(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+	
+	@Override
+	public void addBreweryToDb(int breweryId, String name, int locationId, String address, 
+			String latitude, String longitude, String description,
+			int yearFounded, String imagePath) {
+		String sqlAddBreweryToDb = "INSERT INTO brewery (brewery_id, name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES (?, ?, 1, ?, ?, ?, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddBreweryToDb, breweryId, name, locationId, address, latitude, longitude, description, yearFounded, imagePath);
+	}
 
 	@Override
 	public List<Brewery> getAllBreweries() {
