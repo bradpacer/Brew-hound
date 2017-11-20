@@ -6,8 +6,8 @@
 	<div class="row">
 		<c:forEach var="brewery" items="${breweries}" varStatus="loop">
 			<div class="col-s-12 col-md-4">
-				<h2>${brewery.name}</h2>
 				<div class="img-div">
+					<h2>${brewery.name}</h2>
 					<c:url var="breweryImg" value="img/breweries/${brewery.imagePath}"/>
 					<img class="img-responsive img-rounded" src="${breweryImg}"/>
 				</div>
