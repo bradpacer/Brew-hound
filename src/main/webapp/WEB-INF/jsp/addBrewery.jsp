@@ -9,7 +9,7 @@
 <div class="container">
 
 	<h2>Add Your Brewery!</h2>
-	<p class="lead">Tell us about your house of brews!</p>
+	<p class="lead">Tell us about your house of brews</p>
 
 	<form>
 		<div class="form-row">
