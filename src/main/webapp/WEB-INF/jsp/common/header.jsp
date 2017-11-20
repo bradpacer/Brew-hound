@@ -8,8 +8,10 @@
     <c:url value="/css/brewerycapstone.css" var="cssHref" />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="${cssHref}">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <c:url value = "/js/brewHound.js" var="jsHref"/>
+    <script src=${jsHref }></script>
+	<link rel="stylesheet" href="${cssHref}">
 </head>
 
 <body class="container-fluid">
@@ -27,7 +29,9 @@
 			  <c:url value="/breweryList" var="breweryDetailsHref" />
 			  <li><a href="${breweryDetailsHref}">Breweries</a></li> 
 			  <li><a href="${reviews}">Reviews</a></li> 
-			  <li><a href="${map}">Maps</a></li>                       
+			  <li><a href="${map}">Maps</a></li>
+			  <c:url value="/addBrewery" var="addBreweryHref"/>
+			  <li><a href="${addBreweryHref}">Add Brewery</a>                       
 	        </ul>
 	        <ul class="nav navbar-nav navbar-right">
 				<c:choose>
