@@ -48,5 +48,12 @@ public class AuthenticationController {
 		}
 		
 	}
+	
+	@RequestMapping(path = "/logout", method = RequestMethod.POST)
+	public String logout(ModelMap model, HttpSession session) {
+		model.remove("currentUser");
+		session.removeAttribute("currentUser");
+		return "redirect:/";
+	}
 
 }
