@@ -10,5 +10,6 @@ import com.techelevator.capstone.model.Users;
 public interface UsersDao {
 	public List<Users> getAllUsers();
 	public Users getUserByUserId(int userId);
+	public boolean checkUsernameAndPassword(String username, String password);
 
 }
