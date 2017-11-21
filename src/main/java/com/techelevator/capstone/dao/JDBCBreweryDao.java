@@ -24,11 +24,9 @@ public class JDBCBreweryDao implements BreweryDao {
 	}
 	
 	@Override
-	public void addBreweryToDb(int breweryId, String name, int locationId, String address, 
-			String latitude, String longitude, String description,
-			int yearFounded, String imagePath) {
-		String sqlAddBreweryToDb = "INSERT INTO brewery (brewery_id, name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES (?, ?, 1, ?, ?, ?, ?, ?, ?)";
-		jdbcTemplate.update(sqlAddBreweryToDb, breweryId, name, locationId, address, latitude, longitude, description, yearFounded, imagePath);
+	public void addBreweryToDb(String name, int locationId, String address, String description, int yearFounded) {
+		String sqlAddBreweryToDb = "INSERT INTO brewery (name, location_id, address, description, year_founded) VALUES (?, 1, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddBreweryToDb, name, locationId, address, description, yearFounded);
 	}
 
 	@Override
@@ -45,10 +43,23 @@ public class JDBCBreweryDao implements BreweryDao {
 
 	@Override
 	public Brewery getBreweryByBreweryId(int breweryId) {
-		// TODO Auto-generated method stub
-		return null;
+		String sqlSelectBreweryById = "SELECT * FROM brewery WHERE brewery_id = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBreweryById, breweryId);
+		Brewery brewery = new Brewery();
+		
+		if (results.next()) {
+			brewery.setBreweryId(results.getInt("brewery_id"));
+			brewery.setLocationId(results.getInt("location_id"));
+			brewery.setName(results.getString("name"));
+			brewery.setAddress(results.getString("address"));
+			brewery.setLatitude(results.getString("latitude"));
+			brewery.setLongitude(results.getString("longitude"));
+			brewery.setDescription(results.getString("description"));
+			brewery.setYearFounded(results.getInt("year_founded"));
+			brewery.setImagePath(results.getString("image_path"));
+		}
+		return brewery;
 	}
-
 	private Brewery mapBreweryToRow(SqlRowSet results) {
 		Brewery thisBrewery = new Brewery();
 		thisBrewery.setBreweryId(results.getInt("brewery_id"));
