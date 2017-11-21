@@ -8,7 +8,7 @@
 </c:import>	
 
 <%-- begin variables --%>
-<c:url var="imagePath" value="img/breweries/${brewery.imagePath}" />
+<c:url var="imagePath" value="img/details/${brewery.imagePath}" />
 <c:url var="beerUrl" value="/Beer">
 	<c:param name="beerId" value="${beer.breweryId}"/>
 </c:url>
@@ -30,10 +30,10 @@
 		</h1>
 	</div>
 	<div>
-		<h3>
+		<h2 class = "founded">
 			Founded in
 			<c:out value="${brewery.yearFounded}" />
-		</h3>
+		</h2>
 	</div>
 	<div>
 		<p>
