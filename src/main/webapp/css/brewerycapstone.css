@@ -11,21 +11,22 @@ body {
 .center {
 	text-align: center;
 }
-
-.img-div {
+.homePage {
+	padding: 0px 30px;
+}
+.breweryPage {
+	padding: 0px 15px;
+}
+.homepage img{
 	display: inline-block;
-	width: 296px;
-	height: 418px;
-	padding-top: 20px;
-	padding-bottom: 20px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	margin-right: 0px;
-	margin-left: 28px;
-/*	border: 5px solid #000000; */
+	width: auto;
+}
+.brewery img {
+	display: inline-block;
+	width: 100%;
 }
 
-h2{ 
+h2 {
 	font-size: 25px;
 	font-family: "Arial";
 	text-align: center;
@@ -36,17 +37,21 @@ h2 a {
 }
 
 h2 a:hover {
-    color: white;
-    text-decoration: none;
+	color: white;
+	text-decoration: none;
 }
 
-
-/* Style From Previous Project */
-
-header img {
-	height: 110px;
+h3 {
+  	font-size: 22px;
+  	font-family: "Arial";
+	text-align: center;
 }
 
+#homepage div {
+	float: left;
+	word-wrap:normal;
+
+}
 .fullPage {
 	width: 100%;
 }
@@ -77,43 +82,4 @@ li a:hover {
 	display: inline-block;
 	width: 500px;
 	vertical-align: top;
-}
-
-.park-name {
-	font-size: 26px;
-	margin-top: 15px;
-}
-
-.park-name a {
-	color: black;
-	text-decoration: none;
-}
-
-.park-name a:hover{
-	background-color: black;
-	color: white;
-	padding: 5px;
-	border-radius: 10px;
-}
-
-.homePage-image {
-	width: 475px;
-	height: 350px;
-	border-radius: 15px;
-}
-
-detailPageImageDiv {
-	background-size: cover;
-	height: 200px;
-	background-position: center top;
-	background-size: cover;
-	background-repeat: no-repeat;
-}
-
-.detailPageImage {
-	display: block;
-	width: 80%;
-	height: auto;
-	margin: auto;
-	border-radius: 15px;
 }
