@@ -15,7 +15,7 @@ import com.techelevator.capstone.dao.UserDao;
 import com.techelevator.capstone.model.User;
 
 @Controller
-@SessionAttributes({"currentUser", "userRole"})
+@SessionAttributes("currentUser")
 public class AuthenticationController {
 	
 	private UserDao userDao;
@@ -39,8 +39,7 @@ public class AuthenticationController {
 		if(userDao.checkUsernameAndPassword(username, password)) {
 			session.invalidate();
 			User thisUser = userDao.getUserByUsername(username);
-			model.put("currentUser", username);
-			model.put("userRole", thisUser.getRole());
+			model.put("currentUser", thisUser);
 			if(destination != null) {
 				return "redirect:/" + destination;
 			} else {
@@ -55,9 +54,7 @@ public class AuthenticationController {
 	@RequestMapping(path = "/logout", method = RequestMethod.POST)
 	public String logout(ModelMap model, HttpSession session) {
 		model.remove("currentUser");
-		model.remove("userRole");
 		session.removeAttribute("currentUser");
-		session.removeAttribute("userRole");
 		return "redirect:/";
 	}
 

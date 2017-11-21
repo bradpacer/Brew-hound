@@ -30,7 +30,7 @@
 			  <li><a href="${breweryDetailsHref}">Breweries</a></li> 
 			  <li><a href="${reviews}">Reviews</a></li> 
 			  <li><a href="${map}">Maps</a></li>
-			  <c:if test="${userRole.equals('admin')}">
+			  <c:if test="${currentUser.role.equals('admin')}">
 				  <c:url value="/addBrewery" var="addBreweryHref"/>
 				  <li><a href="${addBreweryHref}">Add Brewery</a>                       
 			  </c:if>
