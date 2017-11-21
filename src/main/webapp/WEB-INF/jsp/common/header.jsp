@@ -16,7 +16,7 @@
 <link rel="stylesheet" href="${cssHref}">
 </head>
 <body>
-	<nav class="navbar navbar-inverse">
+	<nav class="navbar navbar-inverse navbar-fixed-top" data-offset-top="190">
 		<header class="row"> </header>
 		<nav class="container-fluid">
 			<div class="navbar-header">

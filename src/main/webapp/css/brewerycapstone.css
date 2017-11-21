@@ -1,7 +1,14 @@
 body {
+	padding-top: 75px;
 	background-color: #cccccc;
 	font-family: sans-serif;
 	margin: 0;
+}
+.navbar navbar-inverse{
+	position: fixed;
+	width: 100%;
+	top: 30px;
+	overflow: hidden;
 }
 
 .container-fluid {
