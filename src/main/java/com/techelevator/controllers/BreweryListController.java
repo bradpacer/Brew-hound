@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.capstone.dao.BreweryDao;
 import com.techelevator.capstone.model.Brewery;
@@ -36,9 +38,34 @@ public class BreweryListController {
 		return "addBrewery";
 	}
 	
+	@RequestMapping(path = "/addBrewery", method = RequestMethod.POST)
+	public String updateUnits(@RequestParam String name, int locationId, @RequestParam String description, @RequestParam int yearFounded, @RequestParam String address) {
+		breweryDao.addBreweryToDb(name, locationId, address, description, yearFounded);
+		return "redirect:/homePage";
+	}
+	
 	@RequestMapping(path = "/breweryDetailsPage", method = RequestMethod.GET)
-	public String displayDetailsPage() {
+	public String displayDetailsPage(HttpServletRequest request, @RequestParam int breweryId) {
+		Brewery brewery = breweryDao.getBreweryByBreweryId(breweryId);
+		request.setAttribute("brewery", brewery);
 		return "breweryDetailsPage";
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
