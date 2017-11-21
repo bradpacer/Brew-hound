@@ -21,11 +21,6 @@
 <body>
 	<nav class="navbar navbar-inverse">
 		<header class="row">
-<%-- 			<c:url value="/" var="homePageHref" /> --%>
-<%-- 			<c:url value="/img/logoTitle.jpg" var="logoSrc" /> --%>
-<%-- 			<a href="${homePageHref}"> <img class="col-xs-offset-3 col-xs-6" --%>
-<%-- 				src="${logoSrc}" alt="Brew Hound" /> --%>
-<!-- 			</a> -->
 		</header>
 		<nav class="container-fluid">
 			<div class="navbar-header">

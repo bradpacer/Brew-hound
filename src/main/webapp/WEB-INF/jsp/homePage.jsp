@@ -7,7 +7,7 @@
 	<div class="row">
 		<div class="col-s-12 col-md-4">
 			<div class="img-div">
-				<c:url var="breweryImg" value="img/breweries/${brewery.imagePath}"/>
+				<c:url var="breweryImg" value="img/breweries/LandGrant.jpg"/>
 				<img class="img-responsive img-rounded" src="${breweryImg}"/>
 			</div>
 		</div>
