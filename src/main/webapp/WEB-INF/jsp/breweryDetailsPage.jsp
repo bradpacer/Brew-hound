@@ -1,6 +1,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/fmt" prefix = "fmt" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
+	
 
 	<section>
 		<c:url var="breweriesImg" value="/img/breweries/${breweries.imageName}"/>
