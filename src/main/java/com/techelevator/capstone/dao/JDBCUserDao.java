@@ -53,7 +53,8 @@ public class JDBCUserDao implements UserDao {
 	
 	@Override
 	public void updatePassword(String username, String password) {
-		
+		String sqlUpdatePassword = "UPDATE user SET password = ? WHERE username = ?";
+		jdbcTemplate.update(sqlUpdatePassword, password, username);
 	}
 	
 	private User mapUserToRow(SqlRowSet results) {
