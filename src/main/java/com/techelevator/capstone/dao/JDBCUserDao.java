@@ -26,6 +26,16 @@ public class JDBCUserDao implements UserDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	public User getUserByUsername(String username) {
+		String sqlSelectUser = "SELECT * FROM users WHERE username = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectUser, username);
+		if(results.next()) {
+			return mapUserToRow(results);
+		}
+		return null;
+	}
 
 	@Override
 	public User getUserByUserId(int userId) {
