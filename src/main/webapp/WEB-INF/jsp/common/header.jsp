@@ -15,6 +15,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <c:url value="/js/brewHound.js" var="jsHref" />
 <script src=${jsHref }></script>
+<link href="http://designers.hubspot.com/hs-fs/hub/327485/file-2054199286-css/font-awesome.css" rel="stylesheet">
 <link rel="stylesheet" href="${cssHref}">
 </head>
 <body>
