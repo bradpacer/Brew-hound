@@ -51,6 +51,11 @@ public class JDBCUserDao implements UserDao {
 		return results.next();
 	}
 	
+	@Override
+	public void updatePassword(String username, String password) {
+		
+	}
+	
 	private User mapUserToRow(SqlRowSet results) {
 		User thisUser = new User();
 		thisUser.setUserId(results.getInt("user_id"));

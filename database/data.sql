@@ -11,7 +11,8 @@ INSERT INTO location(city, state) VALUES ('Columbus', 'Ohio');
 
 -- USERS
 INSERT INTO users(username, password, role) VALUES ('admin_user', 'password1', 'admin');
-INSERT INTO users(username, password, role) VALUES ('test_user', 'password1', 'generic');
+INSERT INTO users(username, password, role) VALUES ('test_user', 'password1', 'user');
+INSERT INTO users(username, password, role) VALUES ('brewer_user', 'password1', 'brewer');
 
 -- BREWERY
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Land-Grant', 1, '424 W Town St, Columbus, OH 43215', 39.958030, -83.011472, 'Land-Grant was born from a passion for painstakingly-crafted beer, powerful design, and a midwestern sports devotion.', 2014, 'LandGrant.jpg');
