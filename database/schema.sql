@@ -34,6 +34,8 @@ CREATE TABLE users (
 	username varchar(30) NOT NULL,
 	password varchar(80) NOT NULL,
 	role varchar(20) NOT NULL,
+	email varchar(30),
+	phone_number varchar(15),
 	
 	CONSTRAINT pk_users_users_id PRIMARY KEY (user_id)
 );

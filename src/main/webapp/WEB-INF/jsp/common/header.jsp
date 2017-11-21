@@ -46,7 +46,7 @@
 					</c:when>
 					<c:when test="${currentUser.role.equals('brewer')}">
 						<form id="logoutForm" action="${logoutAction}" method="POST"></form>
-						<li style="padding-right: 20px"><a id="logoutLink" href="#"><span style="padding-right: 5px" class="fa fa-beer""></span>Log Out</a></li>
+						<li style="padding-right: 20px"><a id="logoutLink" href="#"><span style="padding-right: 5px" class="fa fa-beer"></span>Log Out</a></li>
 					</c:when>
 					<c:otherwise>
 						<c:url var="logoutAction" value="/logout" />
