@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.techelevator.capstone.dao.UserDao;
+import com.techelevator.capstone.model.User;
 
 @Controller
 @SessionAttributes("currentUser")
@@ -37,7 +38,8 @@ public class AuthenticationController {
 		
 		if(userDao.checkUsernameAndPassword(username, password)) {
 			session.invalidate();
-			model.put("currentUser", username);
+			User thisUser = userDao.getUserByUsername(username);
+			model.put("currentUser", thisUser);
 			if(destination != null) {
 				return "redirect:/" + destination;
 			} else {

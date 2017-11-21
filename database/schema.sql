@@ -54,7 +54,7 @@ CREATE TABLE brewery (
 	longitude REAL,
 	description TEXT NOT NULL,
 	year_founded INTEGER NOT NULL,
-	image_path varchar(30) NOT NULL,
+	image_path varchar(30),
 	
 	CONSTRAINT pk_brewery_brewery_id PRIMARY KEY (brewery_id),
 	CONSTRAINT fk_brewery_location FOREIGN KEY (location_id) REFERENCES location (location_id)
