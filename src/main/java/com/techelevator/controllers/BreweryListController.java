@@ -20,8 +20,8 @@ public class BreweryListController {
 	@Autowired
 	public BreweryListController(BreweryDao breweryDao) {
 		this.breweryDao = breweryDao;
+		
 	}
-	
 	
 	@RequestMapping(path = "/breweryList", method = RequestMethod.GET)
 	public String displayBreweryList(HttpServletRequest request) {
@@ -36,7 +36,9 @@ public class BreweryListController {
 		return "addBrewery";
 	}
 	
-	
-	
+	@RequestMapping(path = "/breweryDetailsPage", method = RequestMethod.GET)
+	public String displayDetailsPage() {
+		return "breweryDetailsPage";
+	}
 
 }
