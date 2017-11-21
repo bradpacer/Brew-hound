@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.techelevator.capstone.dao.BreweryDao;
+import com.techelevator.capstone.dao.BreweryDetailsPageDao;
 import com.techelevator.capstone.model.Brewery;
 
 @Controller
@@ -20,8 +21,8 @@ public class BreweryListController {
 	@Autowired
 	public BreweryListController(BreweryDao breweryDao) {
 		this.breweryDao = breweryDao;
+		
 	}
-	
 	
 	@RequestMapping(path = "/breweryList", method = RequestMethod.GET)
 	public String displayBreweryList(HttpServletRequest request) {
@@ -36,7 +37,9 @@ public class BreweryListController {
 		return "addBrewery";
 	}
 	
-	
-	
+	@RequestMapping(path = "/breweryDetailsPage", method = RequestMethod.GET)
+	public String displayDetailsPage() {
+		return "breweryDetailsPage";
+	}
 
 }
