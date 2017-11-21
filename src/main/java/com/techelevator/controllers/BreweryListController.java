@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.techelevator.capstone.dao.BreweryDao;
-import com.techelevator.capstone.dao.BreweryDetailsPageDao;
 import com.techelevator.capstone.model.Brewery;
 
 @Controller
