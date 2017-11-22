@@ -7,7 +7,7 @@
 <c:url var="updatePassword" value="/user/${currentUser.username}/changePassword" />
 <div class="container">
 	<div class="row justify-content-center">
-		<form action="${formAction}" method=GET id="changePassword">
+		<form action="${updatePassword}" method=GET id="changePasswordLink">
 			<button class="col-xs-offset-5 col-xs-2" type="submit" class="btn btn-default">Update Password</button>
 		</form>
 	</div>
