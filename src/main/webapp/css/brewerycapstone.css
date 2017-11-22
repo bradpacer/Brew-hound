@@ -10,6 +10,9 @@ body {
 	top: 30px;
 	overflow: hidden;
 }
+.nav navbar-nav navbar-right ul{
+	width: 25%;
+}
 
 .parallax {
 	min-height: 800px;

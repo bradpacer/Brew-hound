@@ -10,7 +10,7 @@ import com.techelevator.capstone.model.Brewery;
 public interface BreweryDao {
 	public List<Brewery> getAllBreweries();
 	public Brewery getBreweryByBreweryId(int breweryId);
-	public void addBreweryToDb(String name, int locationId, String address,
+	public void addBreweryToDb(String name, String address,
 			String Description, int yearFounded);
 
 }

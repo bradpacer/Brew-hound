@@ -24,9 +24,9 @@ public class JDBCBreweryDao implements BreweryDao {
 	}
 	
 	@Override
-	public void addBreweryToDb(String name, int locationId, String address, String description, int yearFounded) {
+	public void addBreweryToDb(String name, String address, String description, int yearFounded) {
 		String sqlAddBreweryToDb = "INSERT INTO brewery (name, location_id, address, description, year_founded) VALUES (?, 1, ?, ?, ?)";
-		jdbcTemplate.update(sqlAddBreweryToDb, name, locationId, address, description, yearFounded);
+		jdbcTemplate.update(sqlAddBreweryToDb, name, address, description, yearFounded);
 	}
 
 	@Override
@@ -44,21 +44,11 @@ public class JDBCBreweryDao implements BreweryDao {
 	@Override
 	public Brewery getBreweryByBreweryId(int breweryId) {
 		String sqlSelectBreweryById = "SELECT * FROM brewery WHERE brewery_id = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBreweryById, breweryId);
-		Brewery brewery = new Brewery();
-		
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBreweryById, breweryId);		
 		if (results.next()) {
-			brewery.setBreweryId(results.getInt("brewery_id"));
-			brewery.setLocationId(results.getInt("location_id"));
-			brewery.setName(results.getString("name"));
-			brewery.setAddress(results.getString("address"));
-			brewery.setLatitude(results.getString("latitude"));
-			brewery.setLongitude(results.getString("longitude"));
-			brewery.setDescription(results.getString("description"));
-			brewery.setYearFounded(results.getInt("year_founded"));
-			brewery.setImagePath(results.getString("image_path"));
+			return mapBreweryToRow(results);
 		}
-		return brewery;
+		return null;
 	}
 	private Brewery mapBreweryToRow(SqlRowSet results) {
 		Brewery thisBrewery = new Brewery();
