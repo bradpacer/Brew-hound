@@ -2,7 +2,6 @@ package com.techelevator.capstone.model;
 
 public class Review {
 	private int reviewId;
-	private int beerId;
 	private int userId;
 	private String reviewDescription;
 	private int rating;
@@ -19,12 +18,6 @@ public class Review {
 	}
 	public void setReviewId(int reviewId) {
 		this.reviewId = reviewId;
-	}
-	public int getBeerId() {
-		return beerId;
-	}
-	public void setBeerId(int beerId) {
-		this.beerId = beerId;
 	}
 	public int getUserId() {
 		return userId;

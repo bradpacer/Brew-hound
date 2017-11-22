@@ -18,7 +18,7 @@
 					</tr>
 				</thead>
 				<tbody>
-				<c:forEach items="${reviews}" var="review">
+				<c:forEach items="${beerReviews}" var="review">
 					<tr>
 						<th scope="row">
 							${review.beer.name}
@@ -27,7 +27,7 @@
 							${review.beer.description}
 						</td>
 						<td>
-							${review.rating}
+							${review.averageRating}
 						</td>
 					</tr>
 				</c:forEach>
