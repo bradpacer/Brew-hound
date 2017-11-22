@@ -2,8 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<h2>Test</h2>
-<h2>${currentUser.username}'sDashboard</h2>
+<h2>${currentUser.username}'s Dashboard</h2>
 <c:url var="updatePassword" value="/user/${currentUser.username}/changePassword" />
 <div class="container">
 	<div class="row justify-content-center">
