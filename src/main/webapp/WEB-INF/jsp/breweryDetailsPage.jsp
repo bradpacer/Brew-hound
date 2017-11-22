@@ -16,9 +16,10 @@
 
 
 
-<div class="parallax" style="background-image: url(${imagePath})">
-</div>
-<div class="container brewery-container">
+
+<div class="jumbotron" style="background-image: url(${imagePath})">
+<div class="container-fluid brewery-container">
+<div class="container" id="brewery-details">
 	<div>
 		<h1>
 			<c:out value="${brewery.name}" />
@@ -92,8 +93,8 @@
 			</div>
 		</c:forEach>
 	</div>
-
-
+</div>
+</div>
 </div>
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
