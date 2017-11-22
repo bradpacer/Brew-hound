@@ -21,8 +21,8 @@
 <div class="container-fluid brewery-container">
 <div class="container" id="brewery-details">
 	<div>
-		<h1>
-			<c:out value="${brewery.name}" />
+		<h1 class="brewery-text">
+			<c:out value="${brewery.name}" /><br>
 			<small class="text-muted"> <c:out value="${brewery.address}" />
 			</small>
 		</h1>
