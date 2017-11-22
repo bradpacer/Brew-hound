@@ -6,9 +6,14 @@ public class Review {
 	private int userId;
 	private String reviewDescription;
 	private int rating;
-	private String beerName;
-	private String beerDescription;
+	private Beer beer;
 	
+	public Beer getBeer() {
+		return beer;
+	}
+	public void setBeer(Beer beer) {
+		this.beer = beer;
+	}
 	public int getReviewId() {
 		return reviewId;
 	}
@@ -33,18 +38,7 @@ public class Review {
 	public void setReviewDescription(String reviewDescription) {
 		this.reviewDescription = reviewDescription;
 	}
-	public String getBeerName() {
-		return beerName;
-	}
-	public void setBeerName(String beerName) {
-		this.beerName = beerName;
-	}
-	public String getBeerDescription() {
-		return beerDescription;
-	}
-	public void setBeerDescription(String beerDescription) {
-		this.beerDescription = beerDescription;
-	}
+	
 	public int getRating() {
 		return rating;
 	}

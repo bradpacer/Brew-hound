@@ -30,7 +30,7 @@ INSERT INTO brewery(name, location_id, address, latitude, longitude, description
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Platform', 1, '408 N 6th St, Columbus, OH 43215', 39.97173, -82.99276099999997, 'Sprawling industrial-chic taproom serving a rotating selection of craft beer & local eats.', 2014, 'Platform.jpg');
 
 -- BEER: Land-Grant
-INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'Greens Keeper', 'Big citrus hop flavor that doesn’t overpower, medium body, and a low ABV allow for prolonged enjoyment through even the longest of afternoons. This is an IPA that deserves a day off.', 'Session IPA', 4.7, 44, 'Nonic Pint');
+INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'Greens Keeper', 'Big citrus hop flavor that doesn''t overpower, medium body, and a low ABV allow for prolonged enjoyment through even the longest of afternoons. This is an IPA that deserves a day off.', 'Session IPA', 4.7, 44, 'Nonic Pint');
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, '1862 Ale', 'In 1862, President Lincoln signed the Morrill Act into law, giving the American populous the opportunity to seek a higher education. It called for one great state university in each state, and inadvertently led to tailgate parties, marching bands, fight songs and Bowl Games. Our 1862 Ale –a dry-hopped American take on the classic German beer– combines the crisp clean flavor of German Noble hops with the floral aromatics of American hops.', 'American Kolsch', 4.9, 24, 'Stange');
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'Stiff-Arm', 'Like a palm to your jaw, our American IPA delivers a jolt of hoppy goodness. An ale as well rounded as any All-Timer, our Stiff-Arm IPA combines all of its talents: All American hops, fragrant aromas of citrus and pine, a clean finish, and an uncanny sense of balance provided by a nice malt backing. It’s a classic American beer that will have you striking the pose year-round.', 'IPA', 6.4, 50, 'Nonic Pint');
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'Glory', 'Brewed with Club and City in mind, Glory is an American Wheat Ale with Citra hops. Its final recipe was culled from two experimental taproom tastings with the passionate supporters of Columbus Crew SC. They chose this bright, hoppy, and refreshing wheat ale as their beer. Glory to Columbus, indeed.', 'American Wheat Ale', 5.4, 24, 'Nonic Pint');
@@ -111,6 +111,10 @@ INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type)
 
 -- REVIEW
 INSERT INTO review(beer_id, user_id, description, rating) VALUES (1, 1, 'Greens Keeper is the perfect beer for a "relaxing" day on the links. ', 5);
+INSERT INTO review(beer_id, user_id, description, rating) VALUES (22, 1, 'An excellent beer with a smooth finish. ', 5);
+INSERT INTO review(beer_id, user_id, description, rating) VALUES (9, 1, 'I''ve had better, I''ve had worse. ', 3);
+INSERT INTO review(beer_id, user_id, description, rating) VALUES (1, 1, 'Greens Keeper is the quintessential columbus ale. ', 5);
+INSERT INTO review(beer_id, user_id, description, rating) VALUES (18, 1, 'Tastes like it was brewed in a shoe factory. ', 1);
 
 
 COMMIT;
