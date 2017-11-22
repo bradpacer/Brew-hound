@@ -39,9 +39,9 @@ public class BreweryListController {
 	}
 	
 	@RequestMapping(path = "/addBrewery", method = RequestMethod.POST)
-	public String updateUnits(@RequestParam String name, int locationId, @RequestParam String description, @RequestParam int yearFounded, @RequestParam String address) {
-		breweryDao.addBreweryToDb(name, locationId, address, description, yearFounded);
-		return "redirect:/homePage";
+	public String updateUnits(@RequestParam String name, @RequestParam String description, @RequestParam int yearFounded, @RequestParam String address) {
+		breweryDao.addBreweryToDb(name, address, description, yearFounded);
+		return "redirect:/";
 	}
 	
 	@RequestMapping(path = "/breweryDetailsPage", method = RequestMethod.GET)

@@ -52,20 +52,20 @@
 									class="glyphicon glyphicon-log-in"></span> Login</a></li>
 						</c:when>
 						<c:when test="${currentUser.role.equals('brewer')}">
+							<c:url var="logoutAction" value="/logout" />
+							<form id="logoutForm" action="${logoutAction}" method="POST"></form>
 							<c:url var="userDashHref" value="/user/${currentUser.username}" />
 							<li><a href="${userDashHref}"><span
 									class="glyphicon glyphicon-user"></span> ${currentUser.username}</a></li>
-							<c:url var="logoutAction" value="/logout" />
-							<form id="logoutForm" action="${logoutAction}" method="POST"></form>
 							<li style="padding-right: 20px"><a id="logoutLink" href="#"><span
 									style="padding-right: 5px" class="fa fa-beer"></span>Log Out</a></li>
 						</c:when>
 						<c:otherwise>
+							<c:url var="logoutAction" value="/logout" />
+							<form id="logoutForm" action="${logoutAction}" method="POST"></form>
 							<c:url var="userDashHref" value="/user/${currentUser.username}" />
 							<li><a href="${userDashHref}"><span
 									class="glyphicon glyphicon-user"></span> ${currentUser.username}</a></li>
-							<c:url var="logoutAction" value="/logout" />
-							<form id="logoutForm" action="${logoutAction}" method="POST"></form>
 							<li><a id="logoutLink" href="#">Log Out</a></li>
 						</c:otherwise>
 					</c:choose>
