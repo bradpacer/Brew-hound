@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.techelevator.capstone.dao.ReviewDao;
+import com.techelevator.capstone.model.BeerReview;
 import com.techelevator.capstone.model.Review;
 
 import java.util.List;
@@ -27,6 +28,8 @@ public class ReviewController {
 	public String displayReviewsPage(HttpServletRequest request) {
 		List<Review> reviewsList = reviewDao.getAllReviews();
 		request.setAttribute("reviews", reviewsList);
+		List<BeerReview> beerReviewsList = reviewDao.getBeerReviews();
+		request.setAttribute("beerReviews", beerReviewsList);
 		return "reviews";
 	}
 	
