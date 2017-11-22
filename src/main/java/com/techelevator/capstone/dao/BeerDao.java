@@ -8,7 +8,7 @@ import com.techelevator.capstone.model.Beer;
 
 @Component
 public interface BeerDao {
-	public List<Beer> getAllBeer();
-	public Beer getBeerByBeerId(int beerId);
+	public List<Beer> getAllBeer(int breweryId);
+	public Beer getBeerByBeerId(int breweryId);
 
 }
