@@ -7,16 +7,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <c:url value="/css/brewerycapstone.css" var="cssHref" />
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <c:url value="/js/brewHound.js" var="jsHref" />
 <script src=${jsHref }></script>
-<link href="http://designers.hubspot.com/hs-fs/hub/327485/file-2054199286-css/font-awesome.css" rel="stylesheet">
+<link
+	href="http://designers.hubspot.com/hs-fs/hub/327485/file-2054199286-css/font-awesome.css"
+	rel="stylesheet">
 <link rel="stylesheet" href="${cssHref}">
 </head>
 <body>
-	<nav class="navbar navbar-inverse navbar-fixed-top navbar-toggleable-md" data-offset-top="190">
+	<nav
+		class="navbar navbar-inverse navbar-fixed-top navbar-toggleable-md"
+		data-offset-top="190">
 		<header class="row"> </header>
 		<nav class="container-fluid">
 			<div class="navbar-header">
@@ -56,7 +63,8 @@
 							<form id="logoutForm" action="${logoutAction}" method="POST"></form>
 							<c:url var="userDashHref" value="/user/${currentUser.username}" />
 							<li><a href="${userDashHref}"><span
-									class="glyphicon glyphicon-user"></span> ${currentUser.username}</a></li>
+									class="glyphicon glyphicon-user"></span>
+									${currentUser.username}</a></li>
 							<li style="padding-right: 20px"><a id="logoutLink" href="#"><span
 									style="padding-right: 5px" class="fa fa-beer"></span>Log Out</a></li>
 						</c:when>
@@ -65,7 +73,8 @@
 							<form id="logoutForm" action="${logoutAction}" method="POST"></form>
 							<c:url var="userDashHref" value="/user/${currentUser.username}" />
 							<li><a href="${userDashHref}"><span
-									class="glyphicon glyphicon-user"></span> ${currentUser.username}</a></li>
+									class="glyphicon glyphicon-user"></span>
+									${currentUser.username}</a></li>
 							<li><a id="logoutLink" href="#">Log Out</a></li>
 						</c:otherwise>
 					</c:choose>
