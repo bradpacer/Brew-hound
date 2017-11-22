@@ -4,8 +4,10 @@ public class Review {
 	private int reviewId;
 	private int beerId;
 	private int userId;
-	private String description;
+	private String reviewDescription;
 	private int rating;
+	private String beerName;
+	private String beerDescription;
 	
 	public int getReviewId() {
 		return reviewId;
@@ -25,11 +27,23 @@ public class Review {
 	public void setUserId(int userId) {
 		this.userId = userId;
 	}
-	public String getDescription() {
-		return description;
+	public String getReviewDescription() {
+		return reviewDescription;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setReviewDescription(String reviewDescription) {
+		this.reviewDescription = reviewDescription;
+	}
+	public String getBeerName() {
+		return beerName;
+	}
+	public void setBeerName(String beerName) {
+		this.beerName = beerName;
+	}
+	public String getBeerDescription() {
+		return beerDescription;
+	}
+	public void setBeerDescription(String beerDescription) {
+		this.beerDescription = beerDescription;
 	}
 	public int getRating() {
 		return rating;
