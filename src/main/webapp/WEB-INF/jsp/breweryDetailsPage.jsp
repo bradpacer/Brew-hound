@@ -9,9 +9,9 @@
 
 <%-- begin variables --%>
 <c:url var="imagePath" value="img/details/${brewery.imagePath}" />
-<c:url var="beerUrl" value="/Beer">
-	<c:param name="beerId" value="${beer.breweryId}"/>
-</c:url>
+<%-- <c:url var="beerUrl" value="/Beer">
+	<c:param name="beerId" value="${beer.beerId}"/>
+</c:url> --%>
 <c:url var="breweryUrl" value="/Brewery">
 	<c:param name="breweryId" value="${brewery.breweryId}" />
 </c:url>
@@ -42,8 +42,8 @@
 	</div>
 		<div id="breweryBeers">
 			<h2 class="breweryBeersList">Signature Beers</h2>
-			<b>Name:</b> <c:out value="${beer.name}" /> <br>
-			<b>Description:</b> <c:out value="${beer.description}" />
+			<b>Name:</b> <c:out value="${beer.get(0).name}" /> <br>
+			<b>Description:</b> <c:out value="${beer.get(0).description}" /> 
 		</div>
 		
 	</div>

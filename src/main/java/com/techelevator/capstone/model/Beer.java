@@ -1,6 +1,7 @@
 package com.techelevator.capstone.model;
 
 public class Beer {
+	private int breweryId;
 	private int beerId;
 	private String name;
 	private String description;
@@ -9,6 +10,12 @@ public class Beer {
 	private int ibu;
 	private String glassType;
 	
+	public int getBreweryId() {
+		return breweryId;
+	}
+	public void setBreweryId(int breweryId) {
+		this.breweryId = breweryId;
+	}
 	public int getBeerId() {
 		return beerId;
 	}
