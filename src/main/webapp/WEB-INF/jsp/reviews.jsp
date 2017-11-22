@@ -21,10 +21,10 @@
 				<c:forEach items="${reviews}" var="review">
 					<tr>
 						<th scope="row">
-							${review.beerName}
+							${review.beer.name}
 						</th>
 						<td>
-							${review.beerDescription}
+							${review.beer.description}
 						</td>
 						<td>
 							${review.rating}
