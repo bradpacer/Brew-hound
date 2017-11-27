@@ -42,11 +42,11 @@
 		<c:forEach var="brewery" items="${beer}">
 			<div>
 				<b>Name:</b>
-				<button type="button" data-toggle="modal" data-target="#myModal">
+				<button type="button" data-toggle="modal" data-target=".${brewery.beerId}">
 					<c:out value="${brewery.name}" />
 				</button>
 				<!-- Modal -->
-				<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal fade ${brewery.beerId }" role="dialog">
 					<div class="modal-dialog modal-sm">
 
 						<!-- Modal content-->
