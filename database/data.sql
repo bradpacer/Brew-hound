@@ -54,7 +54,7 @@ INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type)
 
 -- BEER: SEVENTH SON
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (3, 'Seventh Son', 'Seven hops, aromatically hoppy, rich malts, jammy, not bitter, nutty', 'American Strong Ale', 7.7, 40, 'Nonic Pint');
-INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (3, 'The Scientist', 'Constantly shifting IPA, each batch w/one ingredient changed from the last', 'IPA', 7.0, 70-80, 'Pint');
+INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (3, 'The Scientist', 'Constantly shifting IPA, each batch w/one ingredient changed from the last', 'IPA', 7.0, 75, 'Pint');
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (3, 'Stone Fort', 'Inspired by traditional English browns, milk chocolate, faint sweet smoke', 'Oat Brown Ale', 5.0, 25, 'Pint');
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (3, 'Humulus Nimbus', 'Berry-piney hops and light malts, toes the line between IPA and pale ale', 'Strong Pale Ale', 6.0, 53, 'Nonic Pint');
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (3, 'Proliferous', 'Lots of resinous pine, very citrusy and tropical in the nose', 'Double IPA', 8.3, 85, 'Nonic Pint');

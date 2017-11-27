@@ -35,8 +35,27 @@ public class UserController {
 		userDao.updatePassword(userName, password);
 		return "userDashboard";
 	}
+	@RequestMapping(path = "/user/{username}/addBeer", method = RequestMethod.GET)
+	public String displayAddBeerPage(ModelMap model, @PathVariable String username) {
+		return "addBeer";
+	}
+	
+	@RequestMapping(path="/user/{userName}/addBeer", method = RequestMethod.POST)
+	public String addBeer(@PathVariable String userName, @RequestParam String name, @RequestParam String beerType, @RequestParam String description, 
+			@RequestParam double abv, @RequestParam int ibu, @RequestParam String glassType) {
+		return "userDashboard";
+	}
 }
 
 	
 	
+
+
+
+
+
+
+
+
+
 
