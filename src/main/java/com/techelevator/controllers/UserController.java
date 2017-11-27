@@ -15,13 +15,13 @@ import com.techelevator.capstone.dao.UserDao;
 public class UserController {
 	
 	private UserDao userDao;
+	private BeerDao beerDao;
+	
 	
 	@Autowired
-	BeerDao beerDao;
-	
-	@Autowired
-	public UserController(UserDao userDao) {
+	public UserController(BeerDao beerDao, UserDao userDao) {
 		this.userDao = userDao;
+		this.beerDao = beerDao;
 	}
 	
 	@RequestMapping(path = "/user/{username}", method = RequestMethod.GET)
@@ -39,6 +39,7 @@ public class UserController {
 		userDao.updatePassword(userName, password);
 		return "userDashboard";
 	}
+	
 	@RequestMapping(path = "/user/{username}/addBeer", method = RequestMethod.GET)
 	public String displayAddBeerPage(ModelMap model, @PathVariable String username) {
 		return "addBeer";
