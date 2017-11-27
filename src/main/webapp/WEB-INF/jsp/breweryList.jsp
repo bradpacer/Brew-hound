@@ -10,7 +10,14 @@
 				<c:param name="breweryId" value="${brewery.breweryId}"/>
 			</c:url>	
 				<h3><a href="${breweryDetailsPageUrl}"> ${brewery.name} </a></h3>
-				<c:url var="breweryImg" value="img/breweries/${brewery.imagePath}"/>
+				<c:choose>
+					<c:when test="${empty brewery.imagePath}">
+						<c:url var="breweryImg" value="img/breweries/Default.jpg"/>
+					</c:when>
+					<c:otherwise>
+						<c:url var="breweryImg" value="img/breweries/${brewery.imagePath}"/>
+					</c:otherwise>
+				</c:choose>
 				<a href="${breweryDetailsPageUrl}"> <img class="img-responsive img-rounded" src="${breweryImg}"/>
 				</a>
 			</div>
