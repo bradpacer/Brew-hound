@@ -7,7 +7,7 @@ body {
 .navbar navbar-inverse{
 	position: fixed;
 	width: 100%;
-	top: 30px;
+	top: 0px;
 	overflow: hidden;
 }
 .nav navbar-nav navbar-right ul{
@@ -21,21 +21,31 @@ body {
 	
 }
 
-.parallax {
-	min-height: 800px;
+.jumbotron {
+	min-height: auto;
 	background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
 }
 
 .founded {
 	font-size: 25px;
-	text-align: left;
+	text-align: center;
 }
-
+#brewery-details {
+	background-color: rgba(255,255,255, 0.75);
+	width: 75%;
+	padding-bottom: 30px;
+	border-radius: 25px;
+}
+.brewery-text{
+	text-align: center;
+}
 .brewery-container {
 	margin-top: 1rem;
+	padding-right: 30px;
+	padding-left: 30px;
 }
 
 .container-fluid {
@@ -50,6 +60,8 @@ body {
 }
 .breweryPage {
 	padding: 0px 15px;
+}
+
 }
 .homepage img{
 	display: inline-block;
