@@ -19,7 +19,7 @@
 				</thead>
 				<tbody>
 				<c:forEach items="${beerReviews}" var="review">
-					<c:url var="beerReviews" value="/reviews/${review.beer.name}"><%-- <c:param name="beerName" value="${review.beer.id }"/> --%> </c:url>
+					<c:url var="beerReviews" value="/reviews/${review.beer.name}"><c:param name="beerId" value="${review.beer.beerId }"/> </c:url>
 					<tr class="beer-row" data-href="${beerReviews}">
 						<th scope="row">
 							${review.beer.name}

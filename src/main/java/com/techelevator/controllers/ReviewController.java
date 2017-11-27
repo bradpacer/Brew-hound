@@ -30,7 +30,16 @@ public class ReviewController {
 		request.setAttribute("reviews", reviewsList);
 		List<BeerReview> beerReviewsList = reviewDao.getBeerReviews();
 		request.setAttribute("beerReviews", beerReviewsList);
-		return "reviews";
+		return "breweryReviews";
+	}
+	
+	@RequestMapping(path = "/reviews/", method = RequestMethod.GET)
+	public String displayBeerReviewPage(HttpServletRequest request) {
+		List<Review> reviewsList = reviewDao.getAllReviews();
+		request.setAttribute("reviews", reviewsList);
+		List<BeerReview> beerReviewsList = reviewDao.getBeerReviews();
+		request.setAttribute("beerReviews", beerReviewsList);
+		return "beerReviews";
 	}
 	
 
