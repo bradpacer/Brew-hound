@@ -14,7 +14,7 @@
 			<div class="form-group col-md-6">
 				<label for="breweryName">Brewery Name:</label> 
 				<select class="form-control" name="breweryName">
-					<c:forEach var="brewery" items="${breweryList}">
+					<c:forEach var="brewery" items="${BreweryList}">
 						<option value="${brewery_id}"><c:out value="${brewery.name}"/></option>
 					</c:forEach>
 				</select>			
