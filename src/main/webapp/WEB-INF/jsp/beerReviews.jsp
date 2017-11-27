@@ -2,7 +2,8 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<h2>Brew Reviews</h2>
+<h2>${beer.name}</h2>
+<h3>${beer.brewery.name }</h3>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
@@ -12,22 +13,23 @@
 			<table class="table table-hover table-responsive">
 				<thead>
 					<tr>
-						<th scope="col">Beer</th>
+						<th scope="col">User</th>
 						<th scope="col">Description</th>
-						<th scope="col">Rating</th>
+						<th scope="col" class="center">Rating</th>
 					</tr>
 				</thead>
 				<tbody>
-				<c:forEach items="${beerReviews}" var="review">
+				<c:forEach items="${reviews}" var="review">
+					<c:url var="beerReviews" value="/reviews/${review.beer.name}"><c:param name="beerId" value="${review.beer.beerId }"/> </c:url>
 					<tr>
 						<th scope="row">
-							${review.beer.name}
+							${review.user.username}
 						</th>
 						<td>
-							${review.beer.description}
+							${review.reviewDescription}
 						</td>
-						<td>
-							${review.averageRating}
+						<td class="center">
+							${review.rating}
 						</td>
 					</tr>
 				</c:forEach>
@@ -37,7 +39,7 @@
 			<div>
 			</div>
 	</div>
-</div>
+</div> 
 
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

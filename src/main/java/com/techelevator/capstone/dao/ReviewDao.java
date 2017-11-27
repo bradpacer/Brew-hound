@@ -10,7 +10,7 @@ import com.techelevator.capstone.model.Review;
 @Component
 public interface ReviewDao {
 	public List<Review> getAllReviews();
-	public Review getReviewByReviewId(int reviewId);
-	List<BeerReview> getBeerReviews();
+	public List<Review> getReviewsByBeerId(int beerId);
+	public List<BeerReview> getBeerReviews();
 
 }
