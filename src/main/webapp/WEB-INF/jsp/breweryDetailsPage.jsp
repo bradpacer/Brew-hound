@@ -65,8 +65,8 @@
 								</p>
 								<p>
 									ABV:
-									<c:out value="${brewery.abv}" />
-									%
+									<c:out value="${brewery.abv}" />%
+									
 								</p>
 								<p>
 									IBU:
@@ -74,7 +74,7 @@
 								</p>
 								<p>
 									Best enjoyed in
-									<c:out value="${brewery.glassType}" />
+									<c:out value="${brewery.glassType}" /> Glass
 								</p>
 							</div>
 							<div class="modal-footer">
