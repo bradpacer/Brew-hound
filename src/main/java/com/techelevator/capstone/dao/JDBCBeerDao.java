@@ -66,4 +66,12 @@ public class JDBCBeerDao implements BeerDao {
 		return beer;
 	}
 
+	@Override
+	public void addBeer(String brewery, String name, String beerType, String description,
+			double abv, int ibu, String glassType) {
+		String sqlAddBeer = "INSERT INTO beer (brewery_id, name, beer_type, abv, ibu, glass_type) VALUES (?, ?, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddBeer, brewery, name, beerType, description, abv, ibu, glassType);
+				
+	}
+
 }
