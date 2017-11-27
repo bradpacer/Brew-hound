@@ -6,7 +6,14 @@ public class Review {
 	private String reviewDescription;
 	private int rating;
 	private Beer beer;
+	private User user;
 	
+	public User getUser() {
+		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
+	}
 	public Beer getBeer() {
 		return beer;
 	}

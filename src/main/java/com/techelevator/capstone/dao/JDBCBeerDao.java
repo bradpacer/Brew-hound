@@ -12,15 +12,18 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 
 import com.techelevator.capstone.model.Beer;
+import com.techelevator.capstone.model.Brewery;
 
 @Component
 public class JDBCBeerDao implements BeerDao {
 	
 	private JdbcTemplate jdbcTemplate;
+	private BreweryDao breweryDao;
 	
 	@Autowired
-	public JDBCBeerDao(DataSource dataSource) {
+	public JDBCBeerDao(BreweryDao breweryDao, DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
+		this.breweryDao = breweryDao;
 	}
 
 	@Override
@@ -29,13 +32,14 @@ public class JDBCBeerDao implements BeerDao {
 		String sqlSelectBeers = "SELECT * FROM beer WHERE brewery_id = ?";
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeers, breweryId);
 		while(results.next()) {
-			Beer thisBeer = mapBeerToRow(results);
+			Brewery thisBrewery = breweryDao.getBreweryByBreweryId(breweryId);
+			Beer thisBeer = mapBeerToRow(results, thisBrewery);
 			beerList.add(thisBeer);
 		}
 		return beerList;
 	}
 
-	private Beer mapBeerToRow(SqlRowSet results) {
+	private Beer mapBeerToRow(SqlRowSet results, Brewery thisBrewery) {
 		Beer thisBeer = new Beer();
 		thisBeer.setBreweryId(results.getInt("brewery_id"));
 		thisBeer.setBeerType(results.getString("beer_type"));
@@ -45,6 +49,7 @@ public class JDBCBeerDao implements BeerDao {
 		thisBeer.setIbu(results.getInt("ibu"));
 		thisBeer.setName(results.getString("name"));
 		thisBeer.setBeerId(results.getInt("beer_id"));
+		thisBeer.setBrewery(thisBrewery);
 		return thisBeer;
 	}
 
@@ -55,7 +60,8 @@ public class JDBCBeerDao implements BeerDao {
 		Beer beer = new Beer();
 		
 		if (results.next()) {
-			beer = mapBeerToRow(results);
+			Brewery thisBrewery = breweryDao.getBreweryByBreweryId(breweryId);
+			beer = mapBeerToRow(results, thisBrewery);
 		}
 		return beer;
 	}
