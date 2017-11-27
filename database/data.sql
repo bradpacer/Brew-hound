@@ -111,6 +111,10 @@ INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type)
 
 -- REVIEW
 INSERT INTO review(beer_id, user_id, description, rating) VALUES (1, 1, 'Greens Keeper is the perfect beer for a "relaxing" day on the links. ', 5);
+INSERT INTO review(beer_id, user_id, description, rating) VALUES (22, 1, 'An excellent beer with a smooth finish. ', 5);
+INSERT INTO review(beer_id, user_id, description, rating) VALUES (9, 1, 'I''ve had better, I''ve had worse. ', 3);
+INSERT INTO review(beer_id, user_id, description, rating) VALUES (1, 1, 'Greens Keeper is the quintessential columbus ale. ', 5);
+INSERT INTO review(beer_id, user_id, description, rating) VALUES (18, 1, 'Tastes like it was brewed in a shoe factory. ', 1);
 
 
 COMMIT;
