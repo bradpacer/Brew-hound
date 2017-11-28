@@ -1,6 +1,6 @@
 body {
 	padding-top: 75px;
-	background-color: #cccccc;
+	background-color: #3D4747;
 	font-family: sans-serif;
 	margin: 0;
 }
@@ -102,7 +102,6 @@ h3 {
 #homepage div {
 	float: left;
 	word-wrap:normal;
-
 }
 .fullPage {
 	width: 100%;
@@ -117,7 +116,7 @@ li {
 }
 
 li a {
-	color: #ffffff;
+	color: ##3D4747;
 	text-decoration: none;
 	list-style: none;
 }
