@@ -3,6 +3,7 @@ package com.techelevator.controllers;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +18,7 @@ import com.techelevator.capstone.dao.BreweryDao;
 import com.techelevator.capstone.dao.UserDao;
 import com.techelevator.capstone.model.Beer;
 import com.techelevator.capstone.model.Brewery;
+import com.techelevator.capstone.model.User;
 
 @Controller
 public class UserController {
@@ -80,10 +82,21 @@ public class UserController {
 		return "newBrewer";
 	}
 	
-	@RequestMapping(path="/user", method=RequestMethod.POST)
-	public String createUser(@RequestParam String userName, @RequestParam String password) {
+	@RequestMapping(path="/user/new/brewer", method=RequestMethod.POST)
+	public String createNewBrewer(@RequestParam String userName, @RequestParam String password) {
 		userDao.saveUser(userName, password, "brewer");
 		return "redirect:/" ;
+	}
+	
+	@RequestMapping(path="/user/new", method=RequestMethod.GET)
+	public String createUser() {
+		return "newUser" ;
+	}
+	
+	@RequestMapping(path="/user/new", method=RequestMethod.POST)
+	public String createUser(HttpSession session, ModelMap model, @RequestParam String userName, @RequestParam String password) {
+		userDao.saveUser(userName, password, "user");
+		return "redirect:/login" ;
 	}
 
 }
