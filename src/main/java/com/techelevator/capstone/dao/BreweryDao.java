@@ -12,5 +12,6 @@ public interface BreweryDao {
 	public Brewery getBreweryByBreweryId(int breweryId);
 	public void addBreweryToDb(String name, String address,
 			String Description, int yearFounded);
+	public void updateBrewery(String name, String address, String description, int yearFounded, int breweryId);
 
 }

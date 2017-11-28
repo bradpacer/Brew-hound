@@ -15,6 +15,7 @@
 <c:url var="addBeer" value="/user/${currentUser.username}/addBeer" />
 <c:url var="deleteBeer" value="/user/${currentUser.username}/deleteBeer" />
 <c:url value="/addBrewery" var="addBreweryHref" />
+<c:url value="/user/${currentUser.username}/brewer/update" var="updateBrewery" />
 <c:url value="/user/${currentUser.username}/addBrewer"
 	var="addBrewerUser" />
 <c:url value="/user/deleteAccount" var="deleteAccount" />
@@ -59,6 +60,14 @@
 		</c:if>
 		<!-- ----- -->
 		<!-- BREWER ROLES -->
+		<c:if test="${currentUser.role.equals('brewer')}">
+			<div class="col-xs-offset-5 col-xs-2">
+				<form action="${updateBrewery}" method=GET id="updateBreweryLink">
+					<button class="btn btn-default btn-block" type="submit">Update Brewery</button>
+				</form>
+			</div>
+			
+		</c:if>
 		<!-- ----- -->
 		<br> <br>
 		<div class="col-xs-offset-5 col-xs-2">
