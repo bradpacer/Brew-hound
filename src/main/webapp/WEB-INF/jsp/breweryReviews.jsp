@@ -18,25 +18,22 @@
 					</tr>
 				</thead>
 				<tbody>
-				<c:forEach items="${beerReviews}" var="review">
-					<c:url var="beerReviews" value="/reviews/${review.beer.name}"><c:param name="beerId" value="${review.beer.beerId }"/> </c:url>
-					<tr class="beer-row" data-href="${beerReviews}">
-						<th scope="row">
-							${review.beer.name}
-						</th>
-						<td>
-							${review.beer.description}
-						</td>
-						<td>
-							${review.averageRating}
-						</td>
-					</tr>
-				</c:forEach>
+					<c:forEach items="${beerReviews}" var="review">
+						<c:url var="beerReviews" value="/reviews/${review.beer.name}">
+							<c:param name="beerId" value="${review.beer.beerId }" />
+						</c:url>
+						<tr class="beer-row" data-href="${beerReviews}">
+							<th scope="row">${review.beer.name}</th>
+							<td>${review.beer.description}</td>
+							<td>${review.averageRating}</td>
+						</tr>
+					</c:forEach>
 				</tbody>
 			</table>
+ 			<c:url value="/" var="homePageHref" />   <%--PLACE HOLDER VALUE!! --%>
+			<a href="${homePageHref}" class="btn btn-primary" role="button">Tell us what you think!</a>
 		</div>
-			<div>
-			</div>
+		<div></div>
 	</div>
 </div>
 
