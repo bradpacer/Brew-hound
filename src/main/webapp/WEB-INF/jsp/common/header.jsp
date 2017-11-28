@@ -44,10 +44,6 @@
 					<c:url value="/reviews" var="reviewsHref" />
 					<li><a href="${reviewsHref}">Reviews</a></li>
 					<li><a href="${map}">Maps</a></li>
-					<c:if test="${currentUser.role.equals('admin')}">
-						<c:url value="/addBrewery" var="addBreweryHref" />
-						<li><a href="${addBreweryHref}">Add Brewery</a>
-					</c:if>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<c:choose>
