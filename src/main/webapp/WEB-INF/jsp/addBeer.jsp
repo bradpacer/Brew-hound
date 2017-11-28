@@ -43,8 +43,8 @@
 				<label for="inputDescription">Description:</label> 
 				<textarea class="form-control" name="description" id="inputDescription" placeholder="Description" required></textarea>
 			</div>
-		<div class="form-group col-md-6">
-			<button type="submit" class="btn btn-default">Add Beer</button>
+		<div class="form-group col-md-6 ">
+			<button type="submit" class="btn btn-default" data-toggle="confirmation">Add Beer</button>
 		</div>
 	</div>
 		
