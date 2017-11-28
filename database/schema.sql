@@ -21,25 +21,6 @@ CREATE TABLE location (
 	CONSTRAINT pk_location_location_id PRIMARY KEY (location_id)
 );
 
-
--- TABLE user
-CREATE SEQUENCE users_users_id_seq
-  INCREMENT BY 1
-  NO MAXVALUE
-  NO MINVALUE
-  CACHE 1;
-  
-CREATE TABLE users (
-	user_id INTEGER DEFAULT nextval('users_users_id_seq'::regclass) NOT NULL,
-	username varchar(30) NOT NULL,
-	password varchar(80) NOT NULL,
-	role varchar(20) NOT NULL,
-	email varchar(30),
-	phone_number varchar(15),
-	
-	CONSTRAINT pk_users_users_id PRIMARY KEY (user_id)
-);
-
 -- TABLE brewery 
 CREATE SEQUENCE brewery_brewery_id_seq
   INCREMENT BY 1
@@ -60,6 +41,27 @@ CREATE TABLE brewery (
 	
 	CONSTRAINT pk_brewery_brewery_id PRIMARY KEY (brewery_id),
 	CONSTRAINT fk_brewery_location FOREIGN KEY (location_id) REFERENCES location (location_id)
+);
+
+-- TABLE user
+CREATE SEQUENCE users_users_id_seq
+  INCREMENT BY 1
+  NO MAXVALUE
+  NO MINVALUE
+  CACHE 1;
+  
+CREATE TABLE users (
+	user_id INTEGER DEFAULT nextval('users_users_id_seq'::regclass) NOT NULL,
+	username varchar(30) NOT NULL,
+	password varchar(80) NOT NULL,
+	role varchar(20) NOT NULL,
+	email varchar(30),
+	phone_number varchar(15),
+	brewery_id INTEGER,
+	
+	CONSTRAINT pk_users_users_id PRIMARY KEY (user_id),
+	CONSTRAINT fk_users_brewery FOREIGN KEY (brewery_id) REFERENCES brewery (brewery_id)
+
 );
 
 -- TABLE beer 

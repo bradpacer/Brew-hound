@@ -75,4 +75,12 @@ public class JDBCUserDao implements UserDao {
 		
 	}
 
+	@Override
+	public void deleteUser(String username) {
+		User thisUser = getUserByUsername(username);
+		String sqlDeleteUser = "DELETE FROM users WHERE user_id = ?";
+		jdbcTemplate.update(sqlDeleteUser, thisUser.getUserId());
+		
+	}
+
 }
