@@ -29,10 +29,10 @@
 			<label for="inputAddress">Address:</label> 
 			<input type="text" class="form-control" name="address" id="inputAddress" placeholder="1234 Main St, City, State, Zip" required>
 		</div>
-		 <div class="form-group col-md-6">
+		 <div class="form-group text-center col-md-6" style="width:100%">
 		 	<input type="hidden" id="breweryIdHidden" name="breweryId"
 					value="${currentUser.brewery.breweryId }" />
-			<button type="submit" class="btn btn-default">Add Brewery</button>
+			<button type="submit" class="btn btn-default">Update</button>
 		 </div>
 		</div>
 	</form>
