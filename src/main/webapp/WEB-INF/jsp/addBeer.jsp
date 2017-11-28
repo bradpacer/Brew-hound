@@ -13,11 +13,7 @@
 	<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="breweryName">Brewery Name:</label> 
-				<select class="form-control" name="breweryId" required>
-					<c:forEach var="brewery" items="${breweries}">
-						<option value="${brewery.breweryId}"><c:out value="${brewery.name}"/></option>
-					</c:forEach>
-				</select>			
+					<h2><c:out value="${brewer.brewery}"></c:out> </h2>		
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputBeerName">Beer Name:</label> 

@@ -27,6 +27,8 @@
 					Password</button>
 			</form>
 		</div>
+		<!-- BREWER ROLES -->
+		<c:if test="${currentUser.role.equals('brewer')}">
 		<div class="col-xs-offset-5 col-xs-2">
 			<form action="${addBeer}" method=GET id="addBeerLink">
 				<button class="btn btn-default btn-block" type="submit">Add
@@ -39,6 +41,7 @@
 					Beer</button>
 			</form>
 		</div>
+		</c:if>
 		<!-- ADMIN ROLES -->
 		<c:if test="${currentUser.role.equals('admin')}">
 			<div class="col-xs-offset-5 col-xs-2">
