@@ -13,19 +13,15 @@
 	<div class="form-row">
 			<div class="form-group col-md-6">
 				<label for="breweryName">Brewery Name:</label> 
-				<select class="form-control" name="breweryName">
-					<c:forEach var="brewery" items="${breweryList}">
-						<option value="${brewery.brewery_id}"><c:out value="${brewery.name}"/></option>
+				<select class="form-control" name="breweryId" required>
+					<c:forEach var="brewery" items="${breweries}">
+						<option value="${brewery.breweryId}"><c:out value="${brewery.name}"/></option>
 					</c:forEach>
 				</select>			
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputBeerName">Beer Name:</label> 
 				<input type="text" class="form-control" name="name" id="inputBeerName" placeholder="Beer Name" required>
-			</div>
-			<div class="form-group col-md-6">
-				<label for="inputDescription">Description:</label> 
-				<input type="text" class="form-control" name="description" id="inputDescription" placeholder="Description" required>
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputBeerType">Beer Type:</label> 
@@ -44,6 +40,10 @@
 			<input type="text" class="form-control" name="glassType" id="inputGlassType" placeholder="Glass Type" required>
 		</div>
 			<div class="form-group col-md-6">
+				<label for="inputDescription">Description:</label> 
+				<textarea class="form-control" name="description" id="inputDescription" placeholder="Description" required></textarea>
+			</div>
+		<div class="form-group col-md-6">
 			<button type="submit" class="btn btn-default">Add Beer</button>
 		</div>
 	</div>

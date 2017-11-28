@@ -10,7 +10,8 @@ import com.techelevator.capstone.model.Beer;
 public interface BeerDao {
 	public List<Beer> getAllBeer(int breweryId);
 	public Beer getBeerByBeerId(int breweryId);
-	public void addBeer(String brewery, String name, String beerType, String description, double abv, int ibu,
+	public void addBeer(int breweryId, String name, String beerType, String description, double abv, int ibu,
 			String glassType);
+	void deleteBeer(int breweryId, String name);
 
 }

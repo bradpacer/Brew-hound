@@ -67,11 +67,26 @@ public class JDBCBeerDao implements BeerDao {
 	}
 
 	@Override
-	public void addBeer(String brewery, String name, String beerType, String description,
+	public void addBeer(int breweryId, String name, String beerType, String description,
 			double abv, int ibu, String glassType) {
-		String sqlAddBeer = "INSERT INTO beer (brewery_id, name, beer_type, abv, ibu, glass_type) VALUES (?, ?, ?, ?, ?)";
-		jdbcTemplate.update(sqlAddBeer, brewery, name, beerType, description, abv, ibu, glassType);
+		String sqlAddBeer = "INSERT INTO beer (brewery_id, name, beer_type, abv, ibu, glass_type, description) VALUES (?, ?, ?, ?, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddBeer, breweryId, name, beerType, abv, ibu, glassType, description);
 				
+	}
+	
+	@Override
+	public void deleteBeer(int breweryId, String name) {
+		String sqlDeleteBeer = "DELETE * FROM beer WHERE name = ?";
+		jdbcTemplate.update(sqlDeleteBeer, breweryId, name);
 	}
 
 }
+
+
+
+
+
+
+
+
+

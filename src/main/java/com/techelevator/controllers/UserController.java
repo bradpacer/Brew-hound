@@ -1,5 +1,10 @@
 package com.techelevator.controllers;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -9,19 +14,24 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.techelevator.capstone.dao.BeerDao;
+import com.techelevator.capstone.dao.BreweryDao;
 import com.techelevator.capstone.dao.UserDao;
+import com.techelevator.capstone.model.Brewery;
+import com.techelevator.capstone.model.User;
 
 @Controller
 public class UserController {
 	
 	private UserDao userDao;
 	private BeerDao beerDao;
+	private BreweryDao breweryDao;
 	
 	
 	@Autowired
-	public UserController(BeerDao beerDao, UserDao userDao) {
+	public UserController(BeerDao beerDao, BreweryDao breweryDao, UserDao userDao) {
 		this.userDao = userDao;
 		this.beerDao = beerDao;
+		this.breweryDao = breweryDao;
 	}
 	
 	@RequestMapping(path = "/user/{username}", method = RequestMethod.GET)
@@ -40,18 +50,53 @@ public class UserController {
 		return "userDashboard";
 	}
 	
-	@RequestMapping(path = "/user/{username}/addBeer", method = RequestMethod.GET)
-	public String displayAddBeerPage(ModelMap model, @PathVariable String username) {
+	@RequestMapping(path="/user/{username}/addBeer", method=RequestMethod.GET)
+	public String displayAddBeerPage(HttpServletRequest request, ModelMap model, @PathVariable String username) {
+		List<Brewery> breweryList = breweryDao.getAllBreweries();
+		request.setAttribute("breweries", breweryList);
 		return "addBeer";
 	}
 	
-	@RequestMapping(path="/user/{userName}/addBeer", method = RequestMethod.POST)
-	public String addBeer(@RequestParam String brewery, @RequestParam String name, 
+	@RequestMapping(path="/user/{username}/addBeer", method = RequestMethod.POST)
+	public String addBeer(@RequestParam int breweryId, @RequestParam String name, 
 			@RequestParam String beerType, @RequestParam String description, 
 			@RequestParam double abv, @RequestParam int ibu, @RequestParam String glassType) {
-		beerDao.addBeer(brewery, name, beerType, description, abv, ibu, glassType);
+		beerDao.addBeer(breweryId, name, beerType, description, abv, ibu, glassType);
 		return "userDashboard";
 	}
+	
+
+	@RequestMapping(path="/user/{username}/deleteBeer", method=RequestMethod.GET)
+	public String displayDeleteBeerPage(HttpServletRequest request, ModelMap model, @PathVariable String username) {
+		List<Brewery> breweryList = breweryDao.getAllBreweries();
+		request.setAttribute("breweries", breweryList);
+	
+		return "deleteBeer";
+	}
+	
+
+	@RequestMapping(path="user/{username}/addBrewer", method = RequestMethod.GET)
+	public String createNewBrewerAccount(@PathVariable String username) {
+		return "newBrewer";
+	}
+	
+	@RequestMapping(path="/user/new/brewer", method=RequestMethod.POST)
+	public String createNewBrewer(@RequestParam String userName, @RequestParam String password) {
+		userDao.saveUser(userName, password, "brewer");
+		return "redirect:/" ;
+	}
+	
+	@RequestMapping(path="/user/new", method=RequestMethod.GET)
+	public String createUser() {
+		return "newUser" ;
+	}
+	
+	@RequestMapping(path="/user/new", method=RequestMethod.POST)
+	public String createUser(HttpSession session, ModelMap model, @RequestParam String userName, @RequestParam String password) {
+		userDao.saveUser(userName, password, "user");
+		return "redirect:/login" ;
+	}
+
 }
 
 	

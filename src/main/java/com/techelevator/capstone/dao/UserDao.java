@@ -14,5 +14,6 @@ public interface UserDao {
 	public boolean checkUsernameAndPassword(String username, String password);
 	public User getUserByUsername(String username);	
 	public void updatePassword(String username, String password);
+	public void saveUser(String username, String password, String role);
 
 }
