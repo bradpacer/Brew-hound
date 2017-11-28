@@ -74,6 +74,13 @@ public class JDBCUserDao implements UserDao {
 		jdbcTemplate.update(sqlAddUser, username, password, role);
 		
 	}
+	
+	@Override
+	public void saveUser(String username, String password, String role, int breweryId) {
+		String sqlAddUser = "INSERT INTO users (username, password, role, brewery_id) VALUES (?, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddUser, username, password, role, breweryId);
+		
+	}
 
 	@Override
 	public void deleteUser(String username) {

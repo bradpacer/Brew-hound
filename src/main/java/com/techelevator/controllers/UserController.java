@@ -76,13 +76,15 @@ public class UserController {
 	
 
 	@RequestMapping(path="user/{username}/addBrewer", method = RequestMethod.GET)
-	public String createNewBrewerAccount(@PathVariable String username) {
+	public String createNewBrewerAccount(@PathVariable String username, HttpServletRequest request) {
+		List<Brewery> breweryList = breweryDao.getAllBreweries();
+		request.setAttribute("breweries", breweryList);
 		return "newBrewer";
 	}
 	
 	@RequestMapping(path="/user/new/brewer", method=RequestMethod.POST)
-	public String createNewBrewer(@RequestParam String userName, @RequestParam String password) {
-		userDao.saveUser(userName, password, "brewer");
+	public String createNewBrewer(@RequestParam String userName, @RequestParam String password, @RequestParam int breweryId) {
+		userDao.saveUser(userName, password, "brewer", breweryId);
 		return "redirect:/" ;
 	}
 	
