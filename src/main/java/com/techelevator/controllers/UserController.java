@@ -65,6 +65,16 @@ public class UserController {
 		return "userDashboard";
 	}
 	
+
+	@RequestMapping(path="/user/{username}/deleteBeer", method=RequestMethod.GET)
+	public String displayDeleteBeerPage(HttpServletRequest request, ModelMap model, @PathVariable String username) {
+		List<Brewery> breweryList = breweryDao.getAllBreweries();
+		request.setAttribute("breweries", breweryList);
+	
+		return "deleteBeer";
+	}
+	
+
 	@RequestMapping(path="user/{username}/addBrewer", method = RequestMethod.GET)
 	public String createNewBrewerAccount(@PathVariable String username) {
 		return "newBrewer";
@@ -86,6 +96,7 @@ public class UserController {
 		userDao.saveUser(userName, password, "user");
 		return "redirect:/login" ;
 	}
+
 }
 
 	

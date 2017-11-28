@@ -3,9 +3,9 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 <h2>${currentUser.username}'sDashboard</h2>
-<c:url var="updatePassword"
-	value="/user/${currentUser.username}/changePassword" />
+<c:url var="updatePassword" value="/user/${currentUser.username}/changePassword" />
 <c:url var="addBeer" value="/user/${currentUser.username}/addBeer" />
+<c:url var="deleteBeer" value="/user/${currentUser.username}/deleteBeer" />
 <c:url value="/addBrewery" var="addBreweryHref" />
 <c:url value="/user/${currentUser.username}/addBrewer" var="addBrewerUser" />
 <div class="container">
