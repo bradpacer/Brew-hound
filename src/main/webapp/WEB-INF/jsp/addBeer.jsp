@@ -4,7 +4,7 @@
 
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
-<h2>TEST</h2>
+
 <div class="container">
 	<h2>Add Your Beer</h2>
 	<c:url var="formAction" value="/user/${currentUser.username}/addBeer" />

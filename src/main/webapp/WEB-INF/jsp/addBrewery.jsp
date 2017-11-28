@@ -29,8 +29,10 @@
 			<label for="inputAddress">Address:</label> 
 			<input type="text" class="form-control" name="address" id="inputAddress" placeholder="1234 Main St, City, State, Zip" required>
 		</div>
+		 <div class="form-group col-md-6">
+			<button type="submit" class="btn btn-default">Add Brewery</button>
+		 </div>
 		</div>
-		<button type="submit" class="btn btn-default">Add Brewery</button>
 	</form>
 
 

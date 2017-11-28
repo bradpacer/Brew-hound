@@ -50,7 +50,7 @@
 		<h2 class="breweryBeersList">Signature Beers</h2>
 		<c:forEach var="brewery" items="${beer}">
 			<div>
-				<button type="button" data-toggle="modal" data-target=".${brewery.beerId}">
+				<button type="button" class="btn btn-default" data-toggle="modal" data-target=".${brewery.beerId}">
 					<c:out value="${brewery.name}" />
 				</button>
 				<!-- Modal -->

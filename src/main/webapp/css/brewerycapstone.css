@@ -99,6 +99,11 @@ h3 {
 	text-align: center;
 }
 
+.btn-default {
+	background-color: #606060;
+	color:#fff;
+}
+
 #homepage div {
 	float: left;
 	word-wrap:normal;
