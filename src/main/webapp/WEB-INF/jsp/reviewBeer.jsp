@@ -9,27 +9,33 @@
 
 	<h2>Review a Beer</h2>
 	<p class="lead center">Tell us about your favorite brews</p>
-<%-- 	<c:url var="formAction" value="/addBrewery" /> --%>
+	<c:url var="formAction" value="/reviewBeer" />
 	<form method="POST" action="${formAction}">
+		Which brewery is the beer from: 
 		<div class="form-row">
 			<div class="form-group col-md-6">
-				<label for="inputName">Brewery Name:</label> 
-				<input type="text" class="form-control" name="name" id="inputName" placeholder="Brewery Name" required>
+				<label for="inputName">Brewery Name:</label> <select class="form-control" id="brewerydropdown">
+					<c:forEach var="brewery" items="${breweries}">
+						<option value="${brewery.breweryId}"><c:out value="${brewery.name}"/></option>
+					</c:forEach>
+				</select>
 			</div>
 			<div class="form-group col-md-6">
-				<label for="inputDescription">Description:</label> 
-				<input type="text" class="form-control" name="description" id="inputDescription" placeholder="Description" required>
+				<label for="description">Description:</label>
+				<textarea class="form-control" rows="5" id="comment"></textarea>
 			</div>
-			<div class="form-group col-md-6">
-				<label for="inputYearFounded">Year Founded:</label> 
-				<input type="text" class="form-control" name="yearFounded" id="inputYearFounded" placeholder="Year Founded" required>
+			<div class="form-group">
+				<label for="rating">Rating:</label> <select class="form-control"
+					id="rating">
+					<option>1</option>
+					<option>2</option>
+					<option>3</option>
+					<option>4</option>
+					<option>5</option>
+				</select>
 			</div>
-		<div class="form-group col-md-6">
-			<label for="inputAddress">Address:</label> 
-			<input type="text" class="form-control" name="address" id="inputAddress" placeholder="1234 Main St, City, State, Zip" required>
 		</div>
-		</div>
-		<button type="submit" class="btn btn-default">Add Brewery</button>
+		<button type="submit" class="btn btn-default">Submit Review</button>
 	</form>
 
 
