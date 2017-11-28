@@ -108,6 +108,18 @@ public class UserController {
 		session.removeAttribute("currentUser");
 		return "redirect:/";
 	}
+	
+	@RequestMapping(path="/user/{username}/brewer/update", method=RequestMethod.GET)
+	public String updateBreweryInfo() {
+		return "updateBrewery" ;
+	}
+	
+	@RequestMapping(path = "/updateBrewery", method = RequestMethod.POST)
+	public String updateUnits(@RequestParam String name, @RequestParam String description, @RequestParam int yearFounded, @RequestParam String address, @RequestParam int breweryId) {
+		breweryDao.updateBrewery(name, address, description, yearFounded, breweryId);
+		return "redirect:/";
+	}
+	
 
 }
 
