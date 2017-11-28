@@ -14,7 +14,7 @@
 		<c:url var="imagePath" value="img/defaultDetails/Default.jpg" />
 	</c:when>
 	<c:otherwise>
-		<c:url var="imagePath" value="img/defaultDetails/${brewery.imagePath}"/>
+		<c:url var="imagePath" value="img/details/${brewery.imagePath}"/>
 	</c:otherwise>
 </c:choose>
 <c:url var="breweryUrl" value="/Brewery">
