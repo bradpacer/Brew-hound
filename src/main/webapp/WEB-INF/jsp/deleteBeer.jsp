@@ -14,18 +14,17 @@
  <form method="POST" action="${formAction}">
 		
 		<div class="form-group">
-				<label for="breweryName">Brewery Name:</label> 
-				<select class="form-control" name="breweryId" required>
-					<c:forEach var="brewery" items="${breweries}">
-						<option value="${brewery.breweryId}"><c:out value="${brewery.name}"/></option>
-					</c:forEach>
-				</select>			
+				<div class="center">
+					<p style="font-size: 40px">
+						<c:out value="${currentUser.brewery.name}"/>	Brewery
+					</p>
+			</div>		
 			</div>
 			<div class="form-group">
 				<label for="breweryName">Beer Name:</label> 
 				<select class="form-control" name="beerId" required>
-					<c:forEach var="beer" items="${beerList}">
-						<option value="${beer.breweryId}"><c:out value="${beer.name}"/></option>
+					<c:forEach var="beer" items="${beer}">
+						<option value="${beer.name}"><c:out value="${beer.name}"/></option>
 					</c:forEach>
 				</select>			
 			</div>
