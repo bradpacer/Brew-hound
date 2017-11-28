@@ -4,32 +4,38 @@ body {
 	font-family: sans-serif;
 	margin: 0;
 }
-.navbar navbar-inverse{
+
+.navbar navbar-inverse {
 	position: fixed;
 	width: 100%;
 	top: 0px;
 	overflow: hidden;
 }
-.nav navbar-nav navbar-right ul{
+
+.nav navbar-nav navbar-right ul {
 	width: 25%;
 }
 
-.table-bg{
+#map {
+	height: 400px;
+	width: 100%;
+}
+
+.table-bg {
 	background-color: white;
 	padding: 2em;
 	border-radius: 25px;
-	
 }
 
 .jumbotron {
 	min-height: auto;
 	background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
-.dashboard-buttons button{
+.dashboard-buttons button {
 	min-width: 140px;
 }
 
@@ -37,15 +43,18 @@ body {
 	font-size: 25px;
 	text-align: center;
 }
+
 #brewery-details {
-	background-color: rgba(255,255,255, 0.75);
+	background-color: rgba(255, 255, 255, 0.75);
 	width: 75%;
 	padding-bottom: 30px;
 	border-radius: 25px;
 }
-.brewery-text{
+
+.brewery-text {
 	text-align: center;
 }
+
 .brewery-container {
 	margin-top: 1rem;
 	padding-right: 30px;
@@ -59,18 +68,21 @@ body {
 .center {
 	text-align: center;
 }
+
 .homePage {
 	padding: 0px 30px;
 }
+
 .breweryPage {
 	padding: 0px 15px;
 }
 
 }
-.homepage img{
+.homepage img {
 	display: inline-block;
 	width: auto;
 }
+
 .brewery img {
 	display: inline-block;
 	width: 100%;
@@ -94,20 +106,21 @@ h2 a:hover {
 
 h3 {
 	color: black;
-  	font-size: 22px;
-  	font-family: "Arial";
+	font-size: 22px;
+	font-family: "Arial";
 	text-align: center;
 }
 
 .btn-beerDetail {
 	background-color: #606060;
-	color:#fff;
+	color: #fff;
 }
 
 #homepage div {
 	float: left;
-	word-wrap:normal;
+	word-wrap: normal;
 }
+
 .fullPage {
 	width: 100%;
 }

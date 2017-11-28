@@ -9,6 +9,11 @@
 <c:url value="/css/brewerycapstone.css" var="cssHref" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script async defer
+	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQJt8sM0_cDCBf16mHs46XUmxHJg22JHY&callback=initMap">
+</script>
+<c:url value="/js/google-maps-api.js" var="googleMapsJS" />
+<script src="${googleMapsJS }"></script>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script

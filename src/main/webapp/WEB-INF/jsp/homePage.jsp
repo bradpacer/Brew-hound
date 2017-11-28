@@ -20,6 +20,7 @@
 			<div class="brewery col-sm-6 col-md-4">
 				<h2 class="centered">Location</h2>
 				<!--THIS IS WHERE THE GOOGLE MAPS API WILL BE INSERTED FOR HOMEPAGE-->
+				<div id="map"></div>
 			</div>
 		</div>
 	</section>
