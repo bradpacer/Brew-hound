@@ -2,8 +2,8 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<h2>${beer.name}</h2>
-<h3>${beer.brewery.name }</h3>
+<h2 id="beer-name">${beer.name}</h2>
+<h3 id="brewery-name">${beer.brewery.name }</h3>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">

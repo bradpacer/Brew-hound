@@ -66,12 +66,18 @@ public class UserController {
 		return "userDashboard";
 	}
 	
+	@RequestMapping(path="/user/{username}/deleteBeer", method = RequestMethod.POST)
+	public String deleteBeer(@RequestParam int beerId) {
+		beerDao.deleteBeer(beerId);
+		return "userDashboard";
+	}
+
+	
 
 	@RequestMapping(path="/user/{username}/deleteBeer", method=RequestMethod.GET)
 	public String displayDeleteBeerPage(HttpServletRequest request, ModelMap model, @PathVariable String username) {
-		List<Brewery> breweryList = breweryDao.getAllBreweries();
-		request.setAttribute("breweries", breweryList);
-		List<Beer> beerList = beerDao.getAllBeer(1);
+		User thisUser = userDao.getUserByUsername(username);
+		List<Beer> beerList = beerDao.getAllBeer(thisUser.getBrewery().getBreweryId());
 		request.setAttribute("beer", beerList);
 		return "deleteBeer";
 	}

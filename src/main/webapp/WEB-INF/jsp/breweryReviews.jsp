@@ -2,7 +2,9 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<h2><link href="https://fonts.googleapis.com/css?family=Exo+2:600" rel="stylesheet">Brew Reviews</h2>
+<h2 id="title-text"><style>
+@import url('https://fonts.googleapis.com/css?family=Work+Sans');
+</style>Brew Reviews</h2>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
