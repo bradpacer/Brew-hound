@@ -8,7 +8,14 @@
 </c:import>
 
 <%-- begin variables --%>
-<c:url var="imagePath" value="img/details/${brewery.imagePath}" />
+<c:choose>
+	<c:when test="${empty brewery.imagePath}">
+		<c:url var="imagePath" value="img/defaultDetails/Default.jpg" />
+	</c:when>
+	<c:otherwise>
+		<c:url var="imagePath" value="img/defaultDetails/${brewery.imagePath}"/>
+	</c:otherwise>
+</c:choose>
 <c:url var="breweryUrl" value="/Brewery">
 	<c:param name="breweryId" value="${brewery.breweryId}" />
 </c:url>
@@ -91,6 +98,7 @@
 				<b>Description:</b>
 				<c:out value="${brewery.description}" />
 			</div>
+			<br>
 		</c:forEach>
 	</div>
 </div>
