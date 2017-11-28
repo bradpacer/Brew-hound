@@ -62,6 +62,17 @@ public class UserController {
 		beerDao.addBeer(breweryId, name, beerType, description, abv, ibu, glassType);
 		return "userDashboard";
 	}
+	
+	@RequestMapping(path="user/{username}/addBrewer", method = RequestMethod.GET)
+	public String createNewBrewerAccount(@PathVariable String username) {
+		return "newBrewer";
+	}
+	
+	@RequestMapping(path="/user", method=RequestMethod.POST)
+	public String createUser(@RequestParam String userName, @RequestParam String password) {
+		userDao.saveUser(userName, password, "brewer");
+		return "redirect:/" ;
+	}
 }
 
 	

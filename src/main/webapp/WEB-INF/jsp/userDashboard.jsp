@@ -7,6 +7,7 @@
 	value="/user/${currentUser.username}/changePassword" />
 <c:url var="addBeer" value="/user/${currentUser.username}/addBeer" />
 <c:url value="/addBrewery" var="addBreweryHref" />
+<c:url value="/user/${currentUser.username}/addBrewer" var="addBrewerUser" />
 <div class="container">
 	<div class="row justify-content-center">
 		<form action="${updatePassword}" method=GET id="changePasswordLink">
@@ -25,11 +26,18 @@
 					class="btn btn-default">Delete Beer</button>
 			</form>
 		</div>
+		<!-- ADMIN ROLES -->
 		<c:if test="${currentUser.role.equals('admin')}">
 			<div>
 				<form action="${addBreweryHref}" method=GET id="addBeerLink">
 					<button class="col-xs-offset-5 col-xs-2" type="submit"
 						class="btn btn-default">Add Brewery</button>
+				</form>
+			</div>
+			<div>
+				<form action="${addBrewerUser}" method=GET id="createBrewerLink">
+					<button class="col-xs-offset-5 col-xs-2" type="submit"
+						class="btn btn-default">Create Brewer Account</button>
 				</form>
 			</div>
 		</c:if>
