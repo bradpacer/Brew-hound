@@ -15,6 +15,11 @@
 			<button class="col-xs-offset-5 col-xs-2" type="submit" class="btn btn-default">Add Beer</button>
 		</form>
 		</div>
+			<div>
+		<form action="${deleteBeer}" method=GET id="deleteBeerLink">
+			<button class="col-xs-offset-5 col-xs-2" type="submit" class="btn btn-default">Delete Beer</button>
+		</form>
+		</div>
 	</div>
 </div>
 

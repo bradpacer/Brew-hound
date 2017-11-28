@@ -12,5 +12,6 @@ public interface BeerDao {
 	public Beer getBeerByBeerId(int breweryId);
 	public void addBeer(int breweryId, String name, String beerType, String description, double abv, int ibu,
 			String glassType);
+	void deleteBeer(int breweryId, String name);
 
 }
