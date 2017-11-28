@@ -11,9 +11,10 @@
 	
 <form method="POST" action="${formAction}">
 	<div class="form-row">
-			<div class="form-group col-md-6">
-				<label for="breweryName">Brewery Name:</label> 
-					<h2><c:out value="${brewer.brewery}"></c:out> </h2>		
+			<div class="center">
+					<p style="font-size: 40px">
+						<c:out value="${currentUser.brewery.name}"/>	Brewery
+					</p>
 			</div>
 			<div class="form-group col-md-6">
 				<label for="inputBeerName">Beer Name:</label> 
@@ -39,7 +40,7 @@
 				<label for="inputDescription">Description:</label> 
 				<textarea class="form-control" name="description" id="inputDescription" placeholder="Description" required></textarea>
 			</div>
-		<div class="form-group col-md-6 ">
+		<div class="form-group col-md-6 text-center" style="width:100%">
 			<button type="submit" class="btn btn-default" data-toggle="confirmation">Add Beer</button>
 		</div>
 	</div>
