@@ -10,6 +10,8 @@
 <c:url value="/addBrewery" var="addBreweryHref" />
 <c:url value="/user/${currentUser.username}/addBrewer"
 	var="addBrewerUser" />
+<c:url value="/user/deleteAccount" var="deleteAccount" />
+
 <div class="container">
 	<div class="row dashboard-buttons">
 		<div class="col-xs-offset-5 col-xs-2">
@@ -50,6 +52,7 @@
 			<form action="${deleteAccount}" method=POST id="deleteAccount">
 				<button class="btn btn-default btn-block" type="submit">Delete
 					Account</button>
+				<input type="hidden" id="usernameHidden" name="username" value="${currentUser.username }" />
 			</form>
 		</div>
 	</div>

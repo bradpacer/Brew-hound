@@ -92,9 +92,17 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/user/new", method=RequestMethod.POST)
-	public String createUser(HttpSession session, ModelMap model, @RequestParam String userName, @RequestParam String password) {
+	public String createUser(@RequestParam String userName, @RequestParam String password) {
 		userDao.saveUser(userName, password, "user");
 		return "redirect:/login" ;
+	}
+	
+	@RequestMapping(path="/user/deleteAccount", method = RequestMethod.POST)
+	public String deleteAccount(ModelMap model, HttpSession session, @RequestParam String username) {
+		userDao.deleteUser(username);
+		model.remove("currentUser");
+		session.removeAttribute("currentUser");
+		return "redirect:/";
 	}
 
 }
