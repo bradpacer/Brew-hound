@@ -67,8 +67,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(path="/user/{username}/deleteBeer", method = RequestMethod.POST)
-	public String deleteBeer(@RequestParam String name) {
-		beerDao.deleteBeer(name);
+	public String deleteBeer(@RequestParam int beerId) {
+		beerDao.deleteBeer(beerId);
 		return "userDashboard";
 	}
 

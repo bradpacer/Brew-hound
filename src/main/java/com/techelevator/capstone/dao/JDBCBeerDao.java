@@ -75,9 +75,11 @@ public class JDBCBeerDao implements BeerDao {
 	}
 	
 	@Override
-	public void deleteBeer(String name) {
-		String sqlDeleteBeer = "DELETE * FROM beer WHERE name = ?";
-		jdbcTemplate.update(sqlDeleteBeer, name);
+	public void deleteBeer(int beerId) {
+		String sqlDeleteReview = "DELETE FROM review WHERE beer_id = ?";
+		jdbcTemplate.update(sqlDeleteReview, beerId);
+		String sqlDeleteBeer = "DELETE FROM beer WHERE beer_id = ?";
+		jdbcTemplate.update(sqlDeleteBeer, beerId);
 	}
 
 

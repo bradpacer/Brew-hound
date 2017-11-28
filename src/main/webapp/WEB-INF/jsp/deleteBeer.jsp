@@ -24,8 +24,9 @@
 				<label for="breweryName">Beer Name:</label> 
 				<select class="form-control" name="beerId" required>
 					<c:forEach var="beer" items="${beer}">
-						<option value="${beer.name}"><c:out value="${beer.name}"/></option>
+						<option value="${beer.beerId}"><c:out value="${beer.name}"/></option>
 					</c:forEach>
+					
 				</select>			
 			</div>
 				<div>
