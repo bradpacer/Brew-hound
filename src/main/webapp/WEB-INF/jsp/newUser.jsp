@@ -1,9 +1,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<c:url var="formAction" value="/user/new/brewer" />
+<c:url var="formAction" value="/user/new/" />
 <div class="container">
-	<h2>Add Brewer Account</h2>
+	<h2>Create New Account</h2>
 	<form method="POST" action="${formAction}">
 		<div class="row">
 			<div class="col-sm-4"></div>

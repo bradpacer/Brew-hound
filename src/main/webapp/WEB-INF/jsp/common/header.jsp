@@ -48,7 +48,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<c:choose>
 						<c:when test="${empty currentUser}">
-							<c:url var="newUserHref" value="/users/new" />
+							<c:url var="newUserHref" value="/user/new" />
 							<li><a href="${newUserHref}"><span
 									class="glyphicon glyphicon-user"></span> Sign Up</a></li>
 							<c:url var="loginHref" value="/login" />
