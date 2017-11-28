@@ -29,6 +29,10 @@ body {
     background-size: cover;
 }
 
+.dashboard-buttons button{
+	min-width: 140px;
+}
+
 .founded {
 	font-size: 25px;
 	text-align: center;
