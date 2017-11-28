@@ -5,6 +5,7 @@
 <h2>${currentUser.username}'s Dashboard</h2>
 <c:url var="updatePassword" value="/user/${currentUser.username}/changePassword" />
 <c:url var="addBeer" value="/user/${currentUser.username}/addBeer" />
+<c:url var="deleteBeer" value="/user/${currentUser.username}/deleteBeer" />
 <div class="container">
 	<div class="row justify-content-center">
 		<form action="${updatePassword}" method=GET id="changePasswordLink">

@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.techelevator.capstone.dao.BeerDao;
 import com.techelevator.capstone.dao.BreweryDao;
 import com.techelevator.capstone.dao.UserDao;
+import com.techelevator.capstone.model.Beer;
 import com.techelevator.capstone.model.Brewery;
 
 @Controller
@@ -62,6 +63,15 @@ public class UserController {
 		beerDao.addBeer(breweryId, name, beerType, description, abv, ibu, glassType);
 		return "userDashboard";
 	}
+	
+	@RequestMapping(path="/user/{username}/deleteBeer", method=RequestMethod.GET)
+	public String displayDeleteBeerPage(HttpServletRequest request, ModelMap model, @PathVariable String username) {
+		List<Brewery> breweryList = breweryDao.getAllBreweries();
+		request.setAttribute("breweries", breweryList);
+	
+		return "deleteBeer";
+	}
+	
 }
 
 	
