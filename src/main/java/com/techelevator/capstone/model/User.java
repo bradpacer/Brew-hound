@@ -5,6 +5,7 @@ public class User {
 	private String username;
 	private String password;
 	private String role;
+	private Brewery brewery;
 	
 	public int getUserId() {
 		return userId;
@@ -30,6 +31,13 @@ public class User {
 	public void setRole(String role) {
 		this.role = role;
 	}
+	public Brewery getBrewery() {
+		return brewery;
+	}
+	public void setBrewery(Brewery brewery) {
+		this.brewery = brewery;
+	}
+	
 	
 
 }

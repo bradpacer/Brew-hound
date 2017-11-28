@@ -23,6 +23,15 @@
 						type="password" id="confirmPassword" name="confirmPassword"
 						placeHolder="Re-Type Password" class="form-control" />
 				</div>
+				<div>
+					<label for="breweryName">Brewery Name:</label> <select
+						class="form-control" name="breweryId" required>
+						<c:forEach var="brewery" items="${breweries}">
+							<option value="${brewery.breweryId}"><c:out
+									value="${brewery.name}" /></option>
+						</c:forEach>
+					</select>
+				</div>
 				<button type="submit" class="btn btn-default">Create User</button>
 			</div>
 			<div class="col-sm-4"></div>

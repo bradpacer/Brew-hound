@@ -9,16 +9,19 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
 import org.springframework.stereotype.Component;
 
+import com.techelevator.capstone.model.Brewery;
 import com.techelevator.capstone.model.User;
 
 @Component
 public class JDBCUserDao implements UserDao {
 	
 	private JdbcTemplate jdbcTemplate;
+	private BreweryDao breweryDao;
 	
 	@Autowired
-	public JDBCUserDao(DataSource dataSource) {
+	public JDBCUserDao(BreweryDao breweryDao, DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
+		this.breweryDao = breweryDao;
 	}
 
 	@Override
@@ -63,6 +66,10 @@ public class JDBCUserDao implements UserDao {
 		thisUser.setUsername(results.getString("username"));
 		thisUser.setPassword(results.getString("password"));
 		thisUser.setRole(results.getString("role"));
+		if(results.getInt("brewery_id") != 0) {
+			Brewery thisBrewery = breweryDao.getBreweryByBreweryId(results.getInt("brewery_id"));
+			thisUser.setBrewery(thisBrewery);
+		}
 		
 		return thisUser;
 		
@@ -72,6 +79,13 @@ public class JDBCUserDao implements UserDao {
 	public void saveUser(String username, String password, String role) {
 		String sqlAddUser = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
 		jdbcTemplate.update(sqlAddUser, username, password, role);
+		
+	}
+	
+	@Override
+	public void saveUser(String username, String password, String role, int breweryId) {
+		String sqlAddUser = "INSERT INTO users (username, password, role, brewery_id) VALUES (?, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddUser, username, password, role, breweryId);
 		
 	}
 

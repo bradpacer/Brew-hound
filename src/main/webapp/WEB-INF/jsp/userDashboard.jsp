@@ -3,6 +3,13 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 <h2>${currentUser.username}'s Dashboard</h2>
+
+<c:if test="${currentUser.role.equals('brewer')}">
+	<h2>
+		Brewery:
+		<c:out value="${currentUser.brewery.name }" />
+	</h2>
+</c:if>
 <c:url var="updatePassword"
 	value="/user/${currentUser.username}/changePassword" />
 <c:url var="addBeer" value="/user/${currentUser.username}/addBeer" />
@@ -47,12 +54,16 @@
 				</form>
 			</div>
 		</c:if>
+		<!-- ----- -->
+		<!-- BREWER ROLES -->
+		<!-- ----- -->
 		<br> <br>
 		<div class="col-xs-offset-5 col-xs-2">
 			<form action="${deleteAccount}" method=POST id="deleteAccount">
 				<button class="btn btn-default btn-block" type="submit">Delete
 					Account</button>
-				<input type="hidden" id="usernameHidden" name="username" value="${currentUser.username }" />
+				<input type="hidden" id="usernameHidden" name="username"
+					value="${currentUser.username }" />
 			</form>
 		</div>
 	</div>
