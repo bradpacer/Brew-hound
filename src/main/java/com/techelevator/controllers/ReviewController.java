@@ -48,5 +48,11 @@ public class ReviewController {
 		return "beerReviews";
 	}
 	
+//	@RequestMapping(path = "/reviewBeer", method = RequestMethod.GET)
+//	public String displayBeerReviewPage(HttpServletRequest request) {
+//		List<Review> reviewsList = reviewDao.getAllReviews();
+//		request.setAttribute("reviewBeer", reviewsList);
+//		return "beerReviews";
+//	}
 
 }

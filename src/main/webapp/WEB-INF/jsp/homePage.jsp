@@ -4,7 +4,7 @@
 
 <div class="jumbotron" style="background-image: url('img/homepage/homepage.jpg')">
 	<section class="homePage container-fluid">
-		<h2 class="center">Monthly Featured Brewery</h2>
+		<h2 class="center"><link href="https://fonts.googleapis.com/css?family=Exo+2:600" rel="stylesheet">Monthly Featured Brewery</h2>
 		<br>
 		<div class="row">
 			<div class="brewery col-sm-6 col-md-4">
