@@ -11,7 +11,7 @@
 	<div class="row">
 			<div class="col-xs-offset-3 col-xs-6">
 	
- <form method="POST" action="${formAction}">
+ <form method="POST" action="${formAction}" id="deleteBeer">
 		
 		<div class="form-group">
 				<div class="center">
@@ -30,7 +30,17 @@
 				</select>			
 			</div>
 				<div>
-			<button type="submit" class="btn btn-default">Delete Beer</button>
+				<script>
+				$("#deleteBeer").submit(function(event){if (!confirmDelete()){event.preventDefault();}  });
+					function confirmDelete() {
+						var x = confirm("Are you sure you want to delete this beer?");
+						if (x)
+							return true;
+						else
+							return false;
+					}
+				</script>
+				<input class="btn btn-default" type=submit id="submit" value="Delete Beer">
 		</div>
 		</form>
 		</div>

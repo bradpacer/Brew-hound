@@ -2,7 +2,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<h2>${currentUser.username}'s Dashboard</h2>
+<h2>${currentUser.username}'sDashboard</h2>
 
 <c:if test="${currentUser.role.equals('brewer')}">
 	<h2>
@@ -15,7 +15,8 @@
 <c:url var="addBeer" value="/user/${currentUser.username}/addBeer" />
 <c:url var="deleteBeer" value="/user/${currentUser.username}/deleteBeer" />
 <c:url value="/addBrewery" var="addBreweryHref" />
-<c:url value="/user/${currentUser.username}/brewer/update" var="updateBrewery" />
+<c:url value="/user/${currentUser.username}/brewer/update"
+	var="updateBrewery" />
 <c:url value="/user/${currentUser.username}/addBrewer"
 	var="addBrewerUser" />
 <c:url value="/user/deleteAccount" var="deleteAccount" />
@@ -30,18 +31,18 @@
 		</div>
 		<!-- BREWER ROLES -->
 		<c:if test="${currentUser.role.equals('brewer')}">
-		<div class="col-xs-offset-5 col-xs-2">
-			<form action="${addBeer}" method=GET id="addBeerLink">
-				<button class="btn btn-default btn-block" type="submit">Add
-					Beer</button>
-			</form>
-		</div>
-		<div class="col-xs-offset-5 col-xs-2">
-			<form action="${deleteBeer}" method=GET id="deleteBeerLink">
-				<button class="btn btn-default btn-block" type="submit">Delete
-					Beer</button>
-			</form>
-		</div>
+			<div class="col-xs-offset-5 col-xs-2">
+				<form action="${addBeer}" method=GET id="addBeerLink">
+					<button class="btn btn-default btn-block" type="submit">Add
+						Beer</button>
+				</form>
+			</div>
+			<div class="col-xs-offset-5 col-xs-2">
+				<form action="${deleteBeer}" method=GET id="deleteBeerLink">
+					<button class="btn btn-default btn-block" type="submit">Delete
+						Beer</button>
+				</form>
+			</div>
 		</c:if>
 		<!-- ADMIN ROLES -->
 		<c:if test="${currentUser.role.equals('admin')}">
@@ -63,17 +64,27 @@
 		<c:if test="${currentUser.role.equals('brewer')}">
 			<div class="col-xs-offset-5 col-xs-2">
 				<form action="${updateBrewery}" method=GET id="updateBreweryLink">
-					<button class="btn btn-default btn-block" type="submit">Update Brewery</button>
+					<button class="btn btn-default btn-block" type="submit">Update
+						Brewery</button>
 				</form>
 			</div>
-			
+
 		</c:if>
 		<!-- ----- -->
 		<br> <br>
 		<div class="col-xs-offset-5 col-xs-2">
 			<form action="${deleteAccount}" method=POST id="deleteAccount">
-				<button class="btn btn-default btn-block" type="submit">Delete
-					Account</button>
+				<script>
+				$("#deleteAccount").submit(function(event){if (!confirmDelete()){event.preventDefault();}  });
+					function confirmDelete() {
+						var x = confirm("Are you sure you want to delete your account?");
+						if (x)
+							return true;
+						else
+							return false;
+					}
+				</script>
+				<input class="btn btn-default btn-block" type=submit id="submit" value="Delete Account">
 				<input type="hidden" id="usernameHidden" name="username"
 					value="${currentUser.username }" />
 			</form>
