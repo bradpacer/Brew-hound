@@ -26,8 +26,8 @@ INSERT INTO brewery(name, location_id, address, latitude, longitude, description
 
 -- USERS
 INSERT INTO users(username, password, salt, role) VALUES ('admin_user', 'Bal7qQtyU79XYve/C7lf0A==', 'ZkVP3KEjfpznjZ+WLVXweu3phBV78525bAhWF7CdVTna6ENfCQvX3msRKyIKg54f2sTOsQngWIS1WvGVZMH0PajYkggPN5/ze1HXguivvP6zKRkoHiGtp+2hMbqYzc/LJi0x5W9CO4f71JmzXJU22tak4h4jZDWKBZmTtRK8xHU=', 'admin');
-INSERT INTO users(username, password, salt, role) VALUES ('test_user', 'oKnqWv7Zbmx9pJo+T0Q54Q==', 'dcG9XdNFw6tGvn1z26kEM+ew6UGtwAAQlsjCtjxok8gqkdWQ84NJeStE1A1UhwfqMRmqZ46L42geKSeI9CJXTrfEp3nNHzHurGBE5HS8D17eE5ygibsjC5p6p2MRfNVJZpg5WrD9ydiF3UJyOZYFo+3LyV5jcSPvjaOm9MtZibU=', 'user');
-INSERT INTO users(username, password, salt, role, brewery_id) VALUES ('brewer_user', 'yqG01XUzYAzyDo2sfK857A==', 'mkhoEViWKG/044kVyqGY4hnh3pU3vkCvreGdmVb81o1Jy0VcvY9/5TTbbJ8mHV1ueV2HKhVY0W22qg0avAGxsVe+8JXr1hONvig50GhDYUdVV+qZWjyYlRnT9XWQHUDEEGAPRmYmcU8U0nmDDxT1mh0L2yayfajmxqRlVYTi8Yw=', 'brewer', 1);
+INSERT INTO users(username, password, salt, role) VALUES ('test_user', '5ms9o+tC3A4TIC/oH095rw==', 'rUuxqv27ZSJ7iUQdEdKOS5ajP6V/WD7QqDcUY+8PLhk9E934M0pCA6mdt3EELobICdWH6JlJ5wsfsDBf/lm7TvfI84RS3AdvEVewVTIhmjCucmwsbnkOPpyoCzAT5nID023i7qIASrSflyJ+IU3vUL65/UiSaZCiFJ5xrx+/WZQ=', 'user');
+INSERT INTO users(username, password, salt, role, brewery_id) VALUES ('brewer_user', 'UTjzWGxAWwGK3ih8Tb7PLg==', 'BfucpcQ/WbSvXxAMkkENGqEETBo8qSn4YaOZgfcqIpZXuD06tn1sV5nUIYCFSPP5B/Fn0ZO1M1igfFnvSVxKOUoLia5uVEGKyucD8miEi+trTOM+5ntvlHyVq8bBwze6YTMDeXQfkcKJ0IKpJ0A22y1PZhjUlSsNrWx++uNSp9U=', 'brewer', 1);
 
 
 -- BEER: Land-Grant

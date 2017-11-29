@@ -56,8 +56,9 @@ public class JDBCUserDao implements UserDao {
 	public void updatePassword(String username, String password) {
 		byte[] salt = passwordHasher.generateRandomSalt();
 		String hashedPassword = passwordHasher.computeHash(password, salt);
+		String saltString = new String(Base64.encode(salt));
 		String sqlUpdatePassword = "UPDATE users SET password = ?, salt = ? WHERE username = ?";
-		jdbcTemplate.update(sqlUpdatePassword, hashedPassword, salt, username);
+		jdbcTemplate.update(sqlUpdatePassword, hashedPassword, saltString, username);
 	}
 	
 	private User mapUserToRow(SqlRowSet results) {
