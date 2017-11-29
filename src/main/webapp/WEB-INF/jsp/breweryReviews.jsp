@@ -2,9 +2,12 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<h2 id="title-text"><style>
+<h2 id="title-text">
+	<style>
 @import url('https://fonts.googleapis.com/css?family=Work+Sans');
-</style>Brew Reviews</h2>
+</style>
+	Brew Reviews
+</h2><br>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
@@ -31,9 +34,13 @@
 						</tr>
 					</c:forEach>
 				</tbody>
-			</table>
- 			<c:url value="/" var="reviewBeerHref" />   <%--PLACE HOLDER VALUE!! --%>
-			<a href="${homePageHref}" class="btn btn-primary" role="button">Tell us what you think!</a>
+			</table> <br>
+			<c:url value="/" var="reviewBeerHref" />
+			<%--PLACE HOLDER VALUE!! --%>
+			<div class="review-btn">
+				<a href="${homePageHref}" class="btn btn-primary" role="button">Tell
+					us what you think!</a>
+			</div>
 		</div>
 		<div></div>
 	</div>

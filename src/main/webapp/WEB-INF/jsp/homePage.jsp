@@ -5,7 +5,7 @@
 <div class="jumbotron"
 	style="background-image: url('img/homepage/homepage.jpg')">
 	<section class="homePage container-fluid">
-		<h2 id="title-text" class="center">
+		<h2 id="title-text-homepage" class="center">
 			<style> @import url('https://fonts.googleapis.com/css?family=Work+Sans');</style>
 			Monthly Featured Brewery
 		</h2>
@@ -23,8 +23,8 @@
 			</div>
 			<div class="brewery col-sm-6 col-md-4">
 				<h2  id="featured" class="centered">Location</h2>
-				<!--THIS IS WHERE THE GOOGLE MAPS API WILL BE INSERTED FOR HOMEPAGE-->
-				<div id="map"></div>
+				<div id="map" class="img-responsive img-rounded">
+				</div>
 			</div>
 		</div>
 	</section>

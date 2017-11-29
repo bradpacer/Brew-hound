@@ -35,13 +35,13 @@
 			</small>
 		</h1>
 	</div>
-	<div>
-		<h2 class="founded">
-			Founded in
-			<c:out value="${brewery.yearFounded}" />
-		</h2>
-	</div>
-	<div>
+<!-- 	<div> -->
+<!-- 		<h2 class="founded"> -->
+<!-- 			Founded in -->
+<%-- 			<c:out value="${brewery.yearFounded}" /> --%>
+<!-- 		</h2> -->
+<!-- 	</div> -->
+	<div class="brewery-description">
 		<p>
 			<c:out value="${brewery.description}" />
 		</p>

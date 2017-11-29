@@ -3,7 +3,8 @@
 
 <c:url var="formAction" value="/user/new/" />
 <div class="container">
-	<h2>Create New Account</h2>
+	<h2 class="new-user-header">Create New Account</h2>
+	<br>
 	<form method="POST" action="${formAction}">
 		<div class="row">
 			<div class="col-sm-4"></div>
@@ -21,9 +22,11 @@
 				<div class="form-group">
 					<label for="confirmPassword">Confirm Password: </label> <input
 						type="password" id="confirmPassword" name="confirmPassword"
-						placeHolder="Re-Type Password" class="form-control" />
+						placeHolder="Re-Type Password" class="form-control" /><br>
 				</div>
-				<button type="submit" class="btn btn-default">Create User</button>
+				<div class="new-user-btn">
+					<button type="submit" class="btn btn-default">Create User</button>
+				</div>
 			</div>
 			<div class="col-sm-4"></div>
 		</div>
