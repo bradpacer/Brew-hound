@@ -38,7 +38,7 @@
 						class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand" href="#"></a>
-				<!-- THIS IS WHERE WE WILL INSERT OUR BREW HOUND LOGO! -->
+				<!-- THIS IS WHERE WE WILL INSERT OUR BREW HOUND LOGO! --> 
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
