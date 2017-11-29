@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.sql.DataSource;
 
+import org.bouncycastle.util.encoders.Base64;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.rowset.SqlRowSet;
@@ -17,11 +18,14 @@ public class JDBCUserDao implements UserDao {
 	
 	private JdbcTemplate jdbcTemplate;
 	private BreweryDao breweryDao;
+	private PasswordHasher passwordHasher;
 	
 	@Autowired
-	public JDBCUserDao(BreweryDao breweryDao, DataSource dataSource) {
+	public JDBCUserDao(BreweryDao breweryDao, DataSource dataSource, PasswordHasher passwordHasher) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 		this.breweryDao = breweryDao;
+		this.passwordHasher = passwordHasher;
+		
 	}
 	
 	@Override
@@ -36,16 +40,25 @@ public class JDBCUserDao implements UserDao {
 
 	@Override
 	public boolean checkUsernameAndPassword(String username, String password) {
-		String sqlSelectUser = "SELECT * FROM users WHERE username = ? AND password = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectUser, username, password);
+		String sqlSelectUser = "SELECT * FROM users WHERE UPPER(username) = ?";
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectUser, username.toUpperCase());
 		
-		return results.next();
+		if(results.next()) {
+			String storedSalt = results.getString("salt");
+			String storedPassword = results.getString("password");
+			String hashedPassword = passwordHasher.computeHash(password, Base64.decode(storedSalt));
+			return storedPassword.equals(hashedPassword);
+		}
+		return false;
 	}
 	
 	@Override
 	public void updatePassword(String username, String password) {
-		String sqlUpdatePassword = "UPDATE users SET password = ? WHERE username = ?";
-		jdbcTemplate.update(sqlUpdatePassword, password, username);
+		byte[] salt = passwordHasher.generateRandomSalt();
+		String hashedPassword = passwordHasher.computeHash(password, salt);
+		String saltString = new String(Base64.encode(salt));
+		String sqlUpdatePassword = "UPDATE users SET password = ?, salt = ? WHERE username = ?";
+		jdbcTemplate.update(sqlUpdatePassword, hashedPassword, saltString, username);
 	}
 	
 	private User mapUserToRow(SqlRowSet results) {
@@ -65,15 +78,21 @@ public class JDBCUserDao implements UserDao {
 
 	@Override
 	public void saveUser(String username, String password, String role) {
-		String sqlAddUser = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
-		jdbcTemplate.update(sqlAddUser, username, password, role);
+		byte[] salt = passwordHasher.generateRandomSalt();
+		String hashedPassword = passwordHasher.computeHash(password, salt);
+		String saltString = new String(Base64.encode(salt));
+		String sqlAddUser = "INSERT INTO users (username, password, salt, role) VALUES (?, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddUser, username, hashedPassword, saltString, role);
 		
 	}
 	
 	@Override
 	public void saveUser(String username, String password, String role, int breweryId) {
-		String sqlAddUser = "INSERT INTO users (username, password, role, brewery_id) VALUES (?, ?, ?, ?)";
-		jdbcTemplate.update(sqlAddUser, username, password, role, breweryId);
+		byte[] salt = passwordHasher.generateRandomSalt();
+		String hashedPassword = passwordHasher.computeHash(password, salt);
+		String saltString = new String(Base64.encode(salt));
+		String sqlAddUser = "INSERT INTO users (username, password, salt, role, brewery_id) VALUES (?, ?, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddUser, username, hashedPassword, saltString, role, breweryId);
 		
 	}
 
