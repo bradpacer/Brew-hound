@@ -8,8 +8,8 @@
 
 <div class="container">
 
-	<h2>Update Brewery Information</h2>
-	<p class="lead center">Tell us about your house of brews</p>
+	<h2 class="user-dashboard">Update Brewery Information</h2>
+	<p class="lead-center">Tell us about your house of brews</p>
 	<c:url var="formAction" value="/updateBrewery" />
 	<form method="POST" action="${formAction}">
 		<div class="form-row">

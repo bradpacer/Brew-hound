@@ -54,6 +54,7 @@ CREATE TABLE users (
 	user_id INTEGER DEFAULT nextval('users_users_id_seq'::regclass) NOT NULL,
 	username varchar(30) NOT NULL,
 	password varchar(80) NOT NULL,
+	salt varchar(256) NOT NULL,
 	role varchar(20) NOT NULL,
 	email varchar(30),
 	phone_number varchar(15),

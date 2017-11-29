@@ -9,11 +9,6 @@ BEGIN;
 -- LOCATION
 INSERT INTO location(city, state) VALUES ('Columbus', 'Ohio');
 
--- USERS
-INSERT INTO users(username, password, role) VALUES ('admin_user', 'password1', 'admin');
-INSERT INTO users(username, password, role) VALUES ('test_user', 'password1', 'user');
-INSERT INTO users(username, password, role) VALUES ('brewer_user', 'password1', 'brewer');
-
 -- BREWERY
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Land-Grant', 1, '424 W Town St, Columbus, OH 43215', 39.958030, -83.011472, 'Land-Grant was born from a passion for painstakingly-crafted beer, powerful design, and a midwestern sports devotion.', 2014, 'LandGrant.jpg');
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('CBC', 1, '2555 Harrison Road, Columbus, Ohio 43204', 39.966674, -83.070347, 'Columbus Brewing Company is an independent craft brewery dedicated to exploring the flavors of American hops. Best known for Columbus IPA and Bodhi, we also enjoy the subtleties of German-style lagers, the intense characteristics of barrel aged beers and everything in between.', 1988, 'CBC.jpg');
@@ -28,6 +23,12 @@ INSERT INTO brewery(name, location_id, address, latitude, longitude, description
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Hoof Hearted', 1, '850 N. 4th St, Columbus, OH 43215', 39.980444, -82.998085, 'Dabbling in the Dank and Dark arts since 2011, Ol’ HoofyMan’s got that hot-pot kettle that won’t ever settle. Slurp up some serious neon by way of one of our many fruity and full-bodied IPA’s. Learn eternal secrets from unknown elders after inhaling a double-mash stout. Whatever you choose, just make sure you ask your mom if it’s cool to come over.', 2011, 'Hoof.jpg');
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Zaftig', 1, '7020A Huntley Rd, Columbus, OH 43229', 40.1060045, -82.99760349999997, 'We aim to produce every beer to the standards of our favorite beers from the breweries we admire.  With that, we''ve coined our motto, full bodied ales.', 2014, 'Zaftig.jpg');
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Platform', 1, '408 N 6th St, Columbus, OH 43215', 39.97173, -82.99276099999997, 'Sprawling industrial-chic taproom serving a rotating selection of craft beer & local eats.', 2014, 'Platform.jpg');
+
+-- USERS
+INSERT INTO users(username, password, salt, role) VALUES ('admin_user', 'Bal7qQtyU79XYve/C7lf0A==', 'ZkVP3KEjfpznjZ+WLVXweu3phBV78525bAhWF7CdVTna6ENfCQvX3msRKyIKg54f2sTOsQngWIS1WvGVZMH0PajYkggPN5/ze1HXguivvP6zKRkoHiGtp+2hMbqYzc/LJi0x5W9CO4f71JmzXJU22tak4h4jZDWKBZmTtRK8xHU=', 'admin');
+INSERT INTO users(username, password, salt, role) VALUES ('test_user', '5ms9o+tC3A4TIC/oH095rw==', 'rUuxqv27ZSJ7iUQdEdKOS5ajP6V/WD7QqDcUY+8PLhk9E934M0pCA6mdt3EELobICdWH6JlJ5wsfsDBf/lm7TvfI84RS3AdvEVewVTIhmjCucmwsbnkOPpyoCzAT5nID023i7qIASrSflyJ+IU3vUL65/UiSaZCiFJ5xrx+/WZQ=', 'user');
+INSERT INTO users(username, password, salt, role, brewery_id) VALUES ('brewer_user', 'UTjzWGxAWwGK3ih8Tb7PLg==', 'BfucpcQ/WbSvXxAMkkENGqEETBo8qSn4YaOZgfcqIpZXuD06tn1sV5nUIYCFSPP5B/Fn0ZO1M1igfFnvSVxKOUoLia5uVEGKyucD8miEi+trTOM+5ntvlHyVq8bBwze6YTMDeXQfkcKJ0IKpJ0A22y1PZhjUlSsNrWx++uNSp9U=', 'brewer', 1);
+
 
 -- BEER: Land-Grant
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'Greens Keeper', 'Big citrus hop flavor that doesn''t overpower, medium body, and a low ABV allow for prolonged enjoyment through even the longest of afternoons. This is an IPA that deserves a day off.', 'Session IPA', 4.7, 44, 'Nonic Pint');

@@ -6,7 +6,7 @@
 	<c:param name="pageTitle" value="Add Brewery" />
 </c:import>
 
-<div class="container">
+<div class="user-dashboard">
 
 	<h2>Add Your Brewery!</h2>
 	<p class="lead center">Tell us about your house of brews</p>

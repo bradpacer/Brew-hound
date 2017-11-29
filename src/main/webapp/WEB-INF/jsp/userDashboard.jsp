@@ -2,13 +2,17 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
+
 <h2>${currentUser.username}'sDashboard</h2>
 
+<h2 class="user-dashboard">${currentUser.username}'s Dashboard</h2><br>
+
+
 <c:if test="${currentUser.role.equals('brewer')}">
-	<h2>
+	<h2 class="user-dashboard">
 		Brewery:
 		<c:out value="${currentUser.brewery.name }" />
-	</h2>
+	</h2><br>
 </c:if>
 <c:url var="updatePassword"
 	value="/user/${currentUser.username}/changePassword" />
@@ -54,7 +58,7 @@
 			</div>
 			<div class="col-xs-offset-5 col-xs-2">
 				<form action="${addBrewerUser}" method=GET id="createBrewerLink">
-					<button class="btn btn-default btn-block" type="submit">Create
+					<button class="btn btn-default btn-block" type="submit">New
 						Brewer Account</button>
 				</form>
 			</div>
