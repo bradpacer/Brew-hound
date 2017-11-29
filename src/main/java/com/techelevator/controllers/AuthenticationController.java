@@ -43,7 +43,7 @@ public class AuthenticationController {
 			if(isValidRedirect(destination)) {
 				return "redirect:/" + destination;
 			} else {
-				return "redirect:/users/" + username;
+				return "redirect:/";
 			}
 		} else {		
 			return "redirect:/login";
