@@ -77,15 +77,21 @@ public class JDBCUserDao implements UserDao {
 
 	@Override
 	public void saveUser(String username, String password, String role) {
-		String sqlAddUser = "INSERT INTO users (username, password, role) VALUES (?, ?, ?)";
-		jdbcTemplate.update(sqlAddUser, username, password, role);
+		byte[] salt = passwordHasher.generateRandomSalt();
+		String hashedPassword = passwordHasher.computeHash(password, salt);
+		String saltString = new String(Base64.encode(salt));
+		String sqlAddUser = "INSERT INTO users (username, password, salt, role) VALUES (?, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddUser, username, hashedPassword, saltString, role);
 		
 	}
 	
 	@Override
 	public void saveUser(String username, String password, String role, int breweryId) {
-		String sqlAddUser = "INSERT INTO users (username, password, role, brewery_id) VALUES (?, ?, ?, ?)";
-		jdbcTemplate.update(sqlAddUser, username, password, role, breweryId);
+		byte[] salt = passwordHasher.generateRandomSalt();
+		String hashedPassword = passwordHasher.computeHash(password, salt);
+		String saltString = new String(Base64.encode(salt));
+		String sqlAddUser = "INSERT INTO users (username, password, salt, role, brewery_id) VALUES (?, ?, ?, ?, ?)";
+		jdbcTemplate.update(sqlAddUser, username, hashedPassword, saltString, role, breweryId);
 		
 	}
 
