@@ -25,9 +25,9 @@ INSERT INTO brewery(name, location_id, address, latitude, longitude, description
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Platform', 1, '408 N 6th St, Columbus, OH 43215', 39.97173, -82.99276099999997, 'Sprawling industrial-chic taproom serving a rotating selection of craft beer & local eats.', 2014, 'Platform.jpg');
 
 -- USERS
-INSERT INTO users(username, password, role) VALUES ('admin_user', 'password1', 'admin');
-INSERT INTO users(username, password, role) VALUES ('test_user', 'password1', 'user');
-INSERT INTO users(username, password, role, brewery_id) VALUES ('brewer_user', 'password1', 'brewer', 1);
+INSERT INTO users(username, password, salt, role) VALUES ('admin_user', 'Bal7qQtyU79XYve/C7lf0A==', 'ZkVP3KEjfpznjZ+WLVXweu3phBV78525bAhWF7CdVTna6ENfCQvX3msRKyIKg54f2sTOsQngWIS1WvGVZMH0PajYkggPN5/ze1HXguivvP6zKRkoHiGtp+2hMbqYzc/LJi0x5W9CO4f71JmzXJU22tak4h4jZDWKBZmTtRK8xHU=', 'admin');
+INSERT INTO users(username, password, salt, role) VALUES ('test_user', 'oKnqWv7Zbmx9pJo+T0Q54Q==', 'dcG9XdNFw6tGvn1z26kEM+ew6UGtwAAQlsjCtjxok8gqkdWQ84NJeStE1A1UhwfqMRmqZ46L42geKSeI9CJXTrfEp3nNHzHurGBE5HS8D17eE5ygibsjC5p6p2MRfNVJZpg5WrD9ydiF3UJyOZYFo+3LyV5jcSPvjaOm9MtZibU=', 'user');
+INSERT INTO users(username, password, salt, role, brewery_id) VALUES ('brewer_user', 'yqG01XUzYAzyDo2sfK857A==', 'mkhoEViWKG/044kVyqGY4hnh3pU3vkCvreGdmVb81o1Jy0VcvY9/5TTbbJ8mHV1ueV2HKhVY0W22qg0avAGxsVe+8JXr1hONvig50GhDYUdVV+qZWjyYlRnT9XWQHUDEEGAPRmYmcU8U0nmDDxT1mh0L2yayfajmxqRlVYTi8Yw=', 'brewer', 1);
 
 
 -- BEER: Land-Grant
