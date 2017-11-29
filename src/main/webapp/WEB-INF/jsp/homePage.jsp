@@ -13,7 +13,6 @@
 		<div class="row">
 			<div class="brewery col-sm-6 col-md-4">
 				<h2 class="centered">${landGrant.name }</h2>
-
 				<c:url var="breweryImg" value="img/LGTaproom.jpg" />
 				<img class="img-responsive img-rounded" src="${breweryImg}" /><br>
 			</div>
