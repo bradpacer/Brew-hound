@@ -23,12 +23,6 @@ public class JDBCUserDao implements UserDao {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 		this.breweryDao = breweryDao;
 	}
-
-	@Override
-	public List<User> getAllUsers() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
 	@Override
 	public User getUserByUsername(String username) {
@@ -37,12 +31,6 @@ public class JDBCUserDao implements UserDao {
 		if(results.next()) {
 			return mapUserToRow(results);
 		}
-		return null;
-	}
-
-	@Override
-	public User getUserByUserId(int userId) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 
