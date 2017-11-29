@@ -41,6 +41,7 @@
 				<textarea class="form-control" name="description" id="inputDescription" placeholder="Description" required></textarea>
 			</div>
 		<div class="form-group col-md-6 text-center" style="width:100%">
+			<input type="hidden" id="hiddenBeerId" name="breweryId" value="${currentUser.brewery.breweryId}"/>
 			<button type="submit" class="btn btn-default" data-toggle="confirmation">Add Beer</button>
 		</div>
 	</div>

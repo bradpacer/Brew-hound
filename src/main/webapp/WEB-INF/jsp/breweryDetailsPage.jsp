@@ -26,6 +26,7 @@
 
 
 <div class="jumbotron" style="background-image: url(${imagePath})">
+<div style="background-color: rgba(0, 0, 0, 0.3); margin: -60px; padding: 60px">
 <div class="container-fluid brewery-container">
 <div class="container" id="brewery-details">
 	<div>
@@ -100,6 +101,7 @@
 			<br>
 		</c:forEach>
 	</div>
+</div>
 </div>
 </div>
 </div>
