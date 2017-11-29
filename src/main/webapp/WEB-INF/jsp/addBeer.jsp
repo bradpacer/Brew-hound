@@ -6,12 +6,12 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 <div class="container">
-	<h2>Add Your Beer</h2>
+	<h2 class="user-dashboard">Add Your Beer</h2>
 	<c:url var="formAction" value="/user/${currentUser.username}/addBeer" />
 	
 <form method="POST" action="${formAction}">
 	<div class="form-row">
-			<div class="center">
+			<div class="user-dashboard">
 					<p style="font-size: 40px">
 						<c:out value="${currentUser.brewery.name}"/>	Brewery
 					</p>

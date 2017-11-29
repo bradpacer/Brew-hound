@@ -1,7 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
-
+<div class="jumbotron"
+	style="background-image: url('img/homepage/homepage.jpg')">
 <h2 id="beer-name">${beer.name}</h2>
 <h3 id="brewery-name">${beer.brewery.name }</h3>
 <div class="container">
@@ -40,6 +41,7 @@
 			</div>
 	</div>
 </div> 
+</div>
 
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />

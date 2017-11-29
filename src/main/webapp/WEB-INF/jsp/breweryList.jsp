@@ -1,7 +1,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp"/>
-
+<div class="jumbotron"
+	style="background-image: url('img/homepage/homepage.jpg')">>
 <section class="breweryPage container-fluid">
 	<div class="row">
 		<c:forEach var="brewery" items="${breweries}" varStatus="loop">
@@ -24,6 +25,7 @@
 		</c:forEach>
 	</div>
 </section>
+</div>
 
 
 <c:import url="/WEB-INF/jsp/common/footer.jsp"/>

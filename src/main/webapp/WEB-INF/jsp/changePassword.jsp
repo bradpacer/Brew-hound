@@ -3,7 +3,7 @@
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
-<div class="container">
+<div class="user-dashboard">
 	<h2>Change Password</h2>
 	<c:url var="formAction" value="/user/${currentUser.username}/changePassword" />
 	
