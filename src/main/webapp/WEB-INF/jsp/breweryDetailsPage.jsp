@@ -85,7 +85,9 @@
 									<c:out value="${brewery.glassType}" /> Glass
 								</p>
 							</div>
+							<c:url value="/reviewBeer" var="reviewBeerHref" />
 							<div class="modal-footer">
+								<a href="${reviewBeerHref}" class="btn btn-default" role="button">Review</a>
 								<button type="button" class="btn btn-default"
 									data-dismiss="modal">Close</button>
 							</div>
@@ -100,6 +102,7 @@
 			</div>
 			<br>
 		</c:forEach>
+		
 	</div>
 </div>
 </div>
