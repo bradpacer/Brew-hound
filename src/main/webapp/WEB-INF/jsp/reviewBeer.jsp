@@ -33,16 +33,16 @@
 				</select>
 			</div>
 			<div class="form-group col-md-6">
-				<label for="inputName">Beer Name:</label> <select class="form-control" id="beerDropdown">
+				<label for="inputName">Beer Name:</label> <select name="beerId" class="form-control" id="beerDropdown">
 					
 				</select>
 			</div>
 			<div class="form-group col-md-6">
 				<label for="description">Description:</label>
-				<textarea class="form-control" rows="5" id="comment"></textarea>
+				<textarea name="description" class="form-control" rows="5" id="comment"></textarea>
 			</div>
 			<div class="form-group col-md-3">
-				<label for="rating">Rating:</label> <select class="form-control"
+				<label for="rating">Rating:</label> <select name="rating" class="form-control"
 					id="rating">
 					<option>1</option>
 					<option>2</option>
@@ -52,11 +52,13 @@
 				</select>
 			</div>
 		</div>
+		<input type="hidden" value="${currentUser.userId}" name="userId" />
 		<div class="row">
 			<div class="col-md-2">
 				<button type="submit" class="btn btn-default">Submit Review</button>
 			</div>
 		</div>
+		<p>${currentUser.userId}</p>
 	</form>
 	
 	<script>

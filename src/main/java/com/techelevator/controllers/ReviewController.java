@@ -68,5 +68,25 @@ public class ReviewController {
 		
 		return "reviewBeer";
 	}
+	
+	@RequestMapping(path = "/reviewBeer", method = RequestMethod.POST)
+	public String postReview(@RequestParam int userId, @RequestParam int beerId, @RequestParam String description, @RequestParam int rating) {
+		reviewDao.postReview(userId, beerId, description, rating);
+	
+		return "redirect:/reviews";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

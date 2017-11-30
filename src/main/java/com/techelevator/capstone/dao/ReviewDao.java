@@ -12,5 +12,6 @@ public interface ReviewDao {
 	public List<Review> getAllReviews();
 	public List<Review> getReviewsByBeerId(int beerId);
 	public List<BeerReview> getBeerReviews();
+	public void postReview(int userId, int beerId, String description, int rating);
 
 }
