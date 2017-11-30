@@ -33,13 +33,13 @@ public class JDBCBeerDao implements BeerDao {
 		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeers, breweryId);
 		while(results.next()) {
 			Brewery thisBrewery = breweryDao.getBreweryByBreweryId(breweryId);
-			Beer thisBeer = mapBeerToRow(results, thisBrewery);
+			Beer thisBeer = mapBeerToRow(results);
 			beerList.add(thisBeer);
 		}
 		return beerList;
 	}
 
-	private Beer mapBeerToRow(SqlRowSet results, Brewery thisBrewery) {
+	private Beer mapBeerToRow(SqlRowSet results) {
 		Beer thisBeer = new Beer();
 		thisBeer.setBreweryId(results.getInt("brewery_id"));
 		thisBeer.setBeerType(results.getString("beer_type"));
@@ -49,19 +49,19 @@ public class JDBCBeerDao implements BeerDao {
 		thisBeer.setIbu(results.getInt("ibu"));
 		thisBeer.setName(results.getString("name"));
 		thisBeer.setBeerId(results.getInt("beer_id"));
+		Brewery thisBrewery = breweryDao.getBreweryByBreweryId(thisBeer.getBreweryId());
 		thisBeer.setBrewery(thisBrewery);
 		return thisBeer;
 	}
 
 	@Override
-	public Beer getBeerByBeerId(int breweryId) {
+	public Beer getBeerByBeerId(int beerId) {
 		String sqlSelectBeerById = "SELECT * FROM beer WHERE beer_id = ?";
-		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerById, breweryId);
+		SqlRowSet results = jdbcTemplate.queryForRowSet(sqlSelectBeerById, beerId);
 		Beer beer = new Beer();
 		
 		if (results.next()) {
-			Brewery thisBrewery = breweryDao.getBreweryByBreweryId(breweryId);
-			beer = mapBeerToRow(results, thisBrewery);
+			beer = mapBeerToRow(results);
 		}
 		return beer;
 	}
