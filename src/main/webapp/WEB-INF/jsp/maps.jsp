@@ -8,12 +8,14 @@
 #mapPage {
 	height: 100%;
 }
-/* Optional: Makes the sample page fill the window. */
+/* /* Optional: Makes the sample page fill the window. */
 html, body {
 	height: 100%;
 	margin: 0;
 	padding: 0;
 }
+*
+/
 </style>
 
 <div class="jumbotron"
@@ -36,8 +38,9 @@ html, body {
 </div>
 
 <script>
+function initMap() {
 	var map = new google.maps.Map(document.getElementById('mapPage'), {
-		zoom : 12,
+		zoom : 5,
 		center : {
 			lat : -28.024,
 			lng : 140.887
@@ -45,20 +48,6 @@ html, body {
 	});
 
 	var labels = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-
-	var markers = locations.map(function(location, i) {
-		return new google.maps.Marker({
-			position : location,
-			label : labels[i % labels.length]
-		});
-	});
-
-	var markerCluster = new MarkerClusterer(
-			map,
-			markers,
-			{
-				imagePath : 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-			});
 
 	var locations = [ {
 		lat : -31.563910,
@@ -129,13 +118,26 @@ html, body {
 	}, {
 		lat : -43.999792,
 		lng : 170.463352
-	} ]
-</script>
-
-<script
-	src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+	} ];
 	
+	var markers = locations.map(function(location, i) {
+		return new google.maps.Marker({
+			position : location,
+			label : labels[i % labels.length]
+		});
+	});
+
+	var markerCluster = new MarkerClusterer(
+			map,
+			markers,
+			{
+				<c:url var="imageLoc" value="/google-maps-resources/m"/>
+				imagePath : '${imageLoc}'
+			});
+}
+	  
 </script>
-<script async defer
-	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQJt8sM0_cDCBf16mHs46XUmxHJg22JHY&callback=initMap"></script>
+<c:url var="clusterLoc" value="/google-maps-resources/markerclusterer.js"/>
+<script src="${clusterLoc}"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBQJt8sM0_cDCBf16mHs46XUmxHJg22JHY&callback=initMap"></script>
 <c:import url="/WEB-INF/jsp/common/footer.jsp" />
