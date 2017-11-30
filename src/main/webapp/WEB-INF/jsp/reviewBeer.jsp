@@ -64,7 +64,7 @@ margin-right: 80px;
 			</div><br><br>
 			<input type="hidden" value="${currentUser.userId}" name="userId" />
 			<div id="limit" class="row">
-				<div class="login-btn col-md-2">
+				<div class="col-md-2">
 					<button type="submit" class="btn btn-default">Submit
 						Review</button>
 				</div>

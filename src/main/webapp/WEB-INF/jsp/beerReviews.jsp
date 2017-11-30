@@ -3,8 +3,10 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 <div class="jumbotron"
 	style="background-image: url('img/homepage/homepage.jpg')">
+
 <h2 id="title-text">${beer.name}</h2><br>
 <h3 id="title-text">${brewery.name}</h3>
+
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">

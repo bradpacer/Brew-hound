@@ -2,6 +2,7 @@ package com.techelevator.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -55,7 +56,7 @@ public class ReviewController {
 	}
 	
 	@RequestMapping(path = "/reviewBeer", method = RequestMethod.GET)
-	public String displayBeerReviewPage(HttpServletRequest request) {
+	public String displayBeerReviewPage(HttpServletRequest request, ModelMap model) {
 		List<Brewery> breweryList = breweryDao.getAllBreweries();
 		request.setAttribute("breweries", breweryList);
 		Map<Brewery, List<Beer>> beerSelector = new HashMap<>();
@@ -65,6 +66,10 @@ public class ReviewController {
 			
 		}
 		request.setAttribute("breweryMap", beerSelector);
+		
+		if(model.isEmpty()) {
+			return "redirect:/login";
+		}
 		
 		return "reviewBeer";
 	}
