@@ -58,7 +58,6 @@
 				<button type="submit" class="btn btn-default">Submit Review</button>
 			</div>
 		</div>
-		<p>${currentUser.userId}</p>
 	</form>
 	
 	<script>
