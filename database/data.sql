@@ -9,11 +9,6 @@ BEGIN;
 -- LOCATION
 INSERT INTO location(city, state) VALUES ('Columbus', 'Ohio');
 
--- USERS
-INSERT INTO users(username, password, role) VALUES ('admin_user', 'password1', 'admin');
-INSERT INTO users(username, password, role) VALUES ('test_user', 'password1', 'user');
-INSERT INTO users(username, password, role) VALUES ('brewer_user', 'password1', 'brewer');
-
 -- BREWERY
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Land-Grant', 1, '424 W Town St, Columbus, OH 43215', 39.958030, -83.011472, 'Land-Grant was born from a passion for painstakingly-crafted beer, powerful design, and a midwestern sports devotion.', 2014, 'LandGrant.jpg');
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('CBC', 1, '2555 Harrison Road, Columbus, Ohio 43204', 39.966674, -83.070347, 'Columbus Brewing Company is an independent craft brewery dedicated to exploring the flavors of American hops. Best known for Columbus IPA and Bodhi, we also enjoy the subtleties of German-style lagers, the intense characteristics of barrel aged beers and everything in between.', 1988, 'CBC.jpg');
@@ -29,6 +24,12 @@ INSERT INTO brewery(name, location_id, address, latitude, longitude, description
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Zaftig', 1, '7020A Huntley Rd, Columbus, OH 43229', 40.1060045, -82.99760349999997, 'We aim to produce every beer to the standards of our favorite beers from the breweries we admire.  With that, we''ve coined our motto, full bodied ales.', 2014, 'Zaftig.jpg');
 INSERT INTO brewery(name, location_id, address, latitude, longitude, description, year_founded, image_path) VALUES ('Platform', 1, '408 N 6th St, Columbus, OH 43215', 39.97173, -82.99276099999997, 'Sprawling industrial-chic taproom serving a rotating selection of craft beer & local eats.', 2014, 'Platform.jpg');
 
+-- USERS
+INSERT INTO users(username, password, salt, role) VALUES ('admin_user', 'Bal7qQtyU79XYve/C7lf0A==', 'ZkVP3KEjfpznjZ+WLVXweu3phBV78525bAhWF7CdVTna6ENfCQvX3msRKyIKg54f2sTOsQngWIS1WvGVZMH0PajYkggPN5/ze1HXguivvP6zKRkoHiGtp+2hMbqYzc/LJi0x5W9CO4f71JmzXJU22tak4h4jZDWKBZmTtRK8xHU=', 'admin');
+INSERT INTO users(username, password, salt, role) VALUES ('test_user', '5ms9o+tC3A4TIC/oH095rw==', 'rUuxqv27ZSJ7iUQdEdKOS5ajP6V/WD7QqDcUY+8PLhk9E934M0pCA6mdt3EELobICdWH6JlJ5wsfsDBf/lm7TvfI84RS3AdvEVewVTIhmjCucmwsbnkOPpyoCzAT5nID023i7qIASrSflyJ+IU3vUL65/UiSaZCiFJ5xrx+/WZQ=', 'user');
+INSERT INTO users(username, password, salt, role, brewery_id) VALUES ('brewer_user', 'UTjzWGxAWwGK3ih8Tb7PLg==', 'BfucpcQ/WbSvXxAMkkENGqEETBo8qSn4YaOZgfcqIpZXuD06tn1sV5nUIYCFSPP5B/Fn0ZO1M1igfFnvSVxKOUoLia5uVEGKyucD8miEi+trTOM+5ntvlHyVq8bBwze6YTMDeXQfkcKJ0IKpJ0A22y1PZhjUlSsNrWx++uNSp9U=', 'brewer', 1);
+
+
 -- BEER: Land-Grant
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'Greens Keeper', 'Big citrus hop flavor that doesn''t overpower, medium body, and a low ABV allow for prolonged enjoyment through even the longest of afternoons. This is an IPA that deserves a day off.', 'Session IPA', 4.7, 44, 'Nonic Pint');
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, '1862 Ale', 'In 1862, President Lincoln signed the Morrill Act into law, giving the American populous the opportunity to seek a higher education. It called for one great state university in each state, and inadvertently led to tailgate parties, marching bands, fight songs and Bowl Games. Our 1862 Ale –a dry-hopped American take on the classic German beer– combines the crisp clean flavor of German Noble hops with the floral aromatics of American hops.', 'American Kolsch', 4.9, 24, 'Stange');
@@ -39,7 +40,6 @@ INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type)
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'Goon', 'Goon is an assertive Strong American Pale Ale that scoffs at fruity hop trends and brings a dank and piney aggression to the ice. With Magnum, Northern Brewer, Chinook, and Green Bullet hops in tow, Goon lives up to its reputation as a hard hitter. Drop your gloves and take a swig.', 'Strong Pale ALe', 6.1, 65, 'Nonic Pint');
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'One Goal One Ryed', 'One Goal, One Rye’d is brewed in support of cancer research. This Rye Pale Ale offers up a bit of spice from the malt that pairs nicely with notes of lemon and grapefruit. $1.00 from each six pack sold ­and $1.00 from each taproom pour goes directly toward Pelotonia’s goal of ending cancer once and for all.', 'Rye Pale Ale', 5.9, 39, 'Nonic Pint');
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'Beard Crumbs', 'Beard Crumbs is a smooth dark stout teeming with notes of chocolate, coffee, and an extra punch of holiday cheer via the addition of carmelized raisins. It delivers the joy of an oatmeal raisin cookie, minus the crumbly clean up. It''s a festive ale that old Saint Nick himself would love.', 'Oatmeal Raisin Stout', 7.3, 42, 'Belgian');
-INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (1, 'Pool Party', 'Whether at a five-star resort or in your neighbor’s back yard, no pool party is complete without the crisp snap of a cold beer. This Pilsner takes its traditional base south of the equator with the addition of Summer and Wakatu—hops known for their subtle aromas of tropical fruit and citrus—creating a highly drinkable and incredibly refreshing beer. So, when the weather heats up, throw on some sunscreen, hide your wallet in your shoe, grab a pils, and dive in head first.', 'Pilsner', 5.4, 32, 'Nonic Pint');
 
 -- BEER: CBC
 INSERT INTO beer(brewery_id, name, description, beer_type, abv, ibu, glass_type) VALUES (2, 'CBC IPA', 'India Pale Ales were originally brewed to withstand long ocean voyages by increasing the quantity of hops and malt used in their Pale Ale predecessors. Our take on IPA pours pale orange with a balanced malt presence and finishes with a combination of grapefruit, pine, and tropical fruit notes from Pacific Northwest grown hops.', 'IPA', 6.3, 60, 'Nonic Pint');
