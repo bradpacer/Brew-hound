@@ -48,6 +48,7 @@
 					<c:url value="/reviews" var="reviewsHref" />
 					<li><a href="${reviewsHref}"><span
 									class="glyphicon glyphicon-comment"></span> Reviews</a></li>
+					<c:url value="/maps" var="map" />
 					<li><a href="${map}"><span
 									class="glyphicon glyphicon-map-marker"></span> Maps</a></li>
 				</ul>
