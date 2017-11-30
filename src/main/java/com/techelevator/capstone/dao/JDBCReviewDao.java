@@ -104,4 +104,11 @@ public class JDBCReviewDao implements ReviewDao {
 		return thisReview;
 	}
 
+	@Override
+	public void postReview(int userId, int beerId, String description, int rating) {
+		String sqlPostReview = "INSERT INTO review(beer_id, user_id, description, rating) VALUES (?,?,?,?)";
+		jdbcTemplate.update(sqlPostReview, beerId, userId, description, rating);
+		
+	}
+
 }
