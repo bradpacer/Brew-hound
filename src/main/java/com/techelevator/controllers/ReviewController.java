@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.techelevator.capstone.dao.BeerDao;
 import com.techelevator.capstone.dao.BreweryDao;
@@ -21,9 +22,11 @@ import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 
 @Controller
+@SessionAttributes("currentUser")
 public class ReviewController {
 	
 	private ReviewDao reviewDao;
@@ -56,7 +59,7 @@ public class ReviewController {
 	}
 	
 	@RequestMapping(path = "/reviewBeer", method = RequestMethod.GET)
-	public String displayBeerReviewPage(HttpServletRequest request, ModelMap model) {
+	public String displayBeerReviewPage(HttpServletRequest request, ModelMap model, HttpSession session) {
 		List<Brewery> breweryList = breweryDao.getAllBreweries();
 		request.setAttribute("breweries", breweryList);
 		Map<Brewery, List<Beer>> beerSelector = new HashMap<>();
