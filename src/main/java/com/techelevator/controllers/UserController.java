@@ -125,6 +125,12 @@ public class UserController {
 		breweryDao.updateBrewery(name, address, description, yearFounded, breweryId);
 		return "redirect:/";
 	}
+	@RequestMapping(path="user/{username}/deleteBrewery", method = RequestMethod.GET)
+	public String deleteBrewery(@PathVariable String username, HttpServletRequest request) {
+		List<Brewery> breweryList = breweryDao.getAllBreweries();
+		request.setAttribute("breweries", breweryList);
+		return "userDashboard";
+	}
 	
 
 }
