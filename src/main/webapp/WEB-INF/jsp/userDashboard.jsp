@@ -1,14 +1,16 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
-<h2 class="user-dashboard">${currentUser.username}'s Dashboard</h2><br>
+<h2 class="user-dashboard">${currentUser.username}'sDashboard</h2>
+<br>
 
 
 <c:if test="${currentUser.role.equals('brewer')}">
 	<h2 class="user-dashboard">
 		Brewery:
 		<c:out value="${currentUser.brewery.name }" />
-	</h2><br>
+	</h2>
+	<br>
 </c:if>
 <c:url var="updatePassword"
 	value="/user/${currentUser.username}/changePassword" />
@@ -51,13 +53,25 @@
 					<button class="btn btn-default btn-block" type="submit">Add
 						Brewery</button>
 				</form>
-			</div>
+			</div><br>
+			<div class="col-xs-offset-5 col-xs-2">
+				<form action="${deleteBreweryHref}" method=GET id="deleteBreweryLink">
+					<button class="btn btn-default btn-block" type="submit">Delete
+						Brewery</button>
+				</form>
+			</div><br>
 			<div class="col-xs-offset-5 col-xs-2">
 				<form action="${addBrewerUser}" method=GET id="createBrewerLink">
 					<button class="btn btn-default btn-block" type="submit">New
 						Brewer Account</button>
 				</form>
-			</div>
+			</div><br>
+			<div class="col-xs-offset-5 col-xs-2">
+				<form action="${banUserHref}" method=GET id="banUserLink">
+					<button class="btn btn-default btn-block" type="submit">Ban
+						User</button>
+				</form>
+			</div><br>
 		</c:if>
 		<!-- ----- -->
 		<!-- BREWER ROLES -->
@@ -75,7 +89,11 @@
 		<div class="col-xs-offset-5 col-xs-2">
 			<form action="${deleteAccount}" method=POST id="deleteAccount">
 				<script>
-				$("#deleteAccount").submit(function(event){if (!confirmDelete()){event.preventDefault();}  });
+					$("#deleteAccount").submit(function(event) {
+						if (!confirmDelete()) {
+							event.preventDefault();
+						}
+					});
 					function confirmDelete() {
 						var x = confirm("Are you sure you want to delete your account?");
 						if (x)
@@ -84,8 +102,9 @@
 							return false;
 					}
 				</script>
-				<input class="btn btn-default btn-block" type=submit id="submit" value="Delete Account">
-				<input type="hidden" id="usernameHidden" name="username"
+				<input class="btn btn-default btn-block" type=submit id="submit"
+					value="Delete Account"> <input type="hidden"
+					id="usernameHidden" name="username"
 					value="${currentUser.username }" />
 			</form>
 		</div>
