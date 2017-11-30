@@ -249,3 +249,30 @@ li a:hover {
     height: 100%;
     width: 100%;
 }
+
+.container:hover .image{
+ 	opacity: 0.7;
+	transition: .5 ease;
+}
+
+.image {
+	transition: .5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
