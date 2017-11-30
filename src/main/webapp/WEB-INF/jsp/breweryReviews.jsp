@@ -38,10 +38,10 @@
 					</tbody>
 				</table>
 				<br>
-				<c:url value="/" var="reviewBeerHref" />
+				<c:url value="/reviewBeer" var="reviewBeerHref" />
 				<%--PLACE HOLDER VALUE!! --%>
 				<div class="review-btn">
-					<a href="${homePageHref}" class="btn btn-primary" role="button">Tell
+					<a href="${reviewBeerHref}" class="btn btn-primary" role="button">Tell
 						us what you think!</a>
 				</div>
 			</div>
