@@ -250,14 +250,11 @@ li a:hover {
     width: 100%;
 }
 
-.container:hover .image{
+.container:hover .image {
  	opacity: 0.7;
 	transition: .5 ease;
 }
 
-.image {
-	transition: .5s ease;
-}
 
 
 

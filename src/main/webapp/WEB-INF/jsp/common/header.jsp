@@ -40,12 +40,16 @@
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
 					<c:url value="/" var="homePageHref" />
-					<li><a href="${homePageHref}">Home</a></li>
+					<li><a href="${homePageHref}"><span
+									class="glyphicon glyphicon-home"></span> Home</a></li>
 					<c:url value="/breweryList" var="breweryDetailsHref" />
-					<li><a href="${breweryDetailsHref}">Breweries</a></li>
+					<li><a href="${breweryDetailsHref}"><span
+									class="glyphicon glyphicon-grain"></span> Breweries</a></li>
 					<c:url value="/reviews" var="reviewsHref" />
-					<li><a href="${reviewsHref}">Reviews</a></li>
-					<li><a href="${map}">Maps</a></li>
+					<li><a href="${reviewsHref}"><span
+									class="glyphicon glyphicon-comment"></span> Reviews</a></li>
+					<li><a href="${map}"><span
+									class="glyphicon glyphicon-map-marker"></span> Maps</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<c:choose>
