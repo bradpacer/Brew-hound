@@ -5,7 +5,7 @@
 	style="background-image: url('img/homepage/homepage.jpg')">
 
 <h2 id="title-text">${beer.name}</h2><br>
-<h3 id="title-text">${brewery.name}</h3>
+<h3 id="title-text">${beer.brewery.name}</h3>
 
 <div class="container">
 	<div class="row">
