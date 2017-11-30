@@ -4,7 +4,7 @@
 <div class="jumbotron"
 	style="background-image: url('img/homepage/homepage.jpg')">
 <h2 id="beer-name">${beer.name}</h2>
-<h3 id="brewery-name">${beer.brewery.name }</h3>
+<h3 id="brewery-name">${beer.brewery.name}</h3>
 <div class="container">
 	<div class="row">
 		<div class="col-xs-12">
