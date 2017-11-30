@@ -44,7 +44,7 @@
 									class="glyphicon glyphicon-home"></span> Home</a></li>
 					<c:url value="/breweryList" var="breweryDetailsHref" />
 					<li><a href="${breweryDetailsHref}"><span
-									class="glyphicon glyphicon-oil"></span> Breweries</a></li>
+									class="glyphicon glyphicon-grain"></span> Breweries</a></li>
 					<c:url value="/reviews" var="reviewsHref" />
 					<li><a href="${reviewsHref}"><span
 									class="glyphicon glyphicon-comment"></span> Reviews</a></li>
