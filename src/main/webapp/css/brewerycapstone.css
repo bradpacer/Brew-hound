@@ -88,6 +88,9 @@ body {
 .brewery-description{
 	text-align: center;
 }
+.breweryBeersList{
+	text-align: center;
+}
 
 #brewery-details {
 	background-color: rgba(255, 255, 255, 0.85);
@@ -158,8 +161,9 @@ body {
 .img-responsive img-rounded{
 	max-height:300px:
 }
-	text-align: center;
-}
+/* h2	{ */
+/* 	text-align: center; */
+/* } */
 
 h2 a {
 	color: black;
@@ -245,3 +249,30 @@ li a:hover {
     height: 100%;
     width: 100%;
 }
+
+.container:hover .image{
+ 	opacity: 0.7;
+	transition: .5 ease;
+}
+
+.image {
+	transition: .5s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
