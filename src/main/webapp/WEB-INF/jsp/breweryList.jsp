@@ -11,7 +11,7 @@
 				<c:param name="breweryId" value="${brewery.breweryId}"/>
 			</c:url>	
 				<h3><a href="${breweryDetailsPageUrl}"> ${brewery.name} </a></h3>
-				<div class="container">
+				<div class="container hover10">
 				<c:choose>
 					<c:when test="${empty brewery.imagePath}">
 						<c:url var="breweryImg" value="img/breweries/Default.jpg"/>
