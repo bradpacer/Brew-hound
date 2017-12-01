@@ -27,7 +27,7 @@
 
 <div class="jumbotron" style="background-image: url(${imagePath})">
 	<div
-		style="background-color: rgba(0, 0, 0, 0.3); margin: -60px; padding: 60px">
+		style="background-color: rgba(0, 0, 0, 0.3); margin: -60px; padding: 60px; margin-right: 0">
 		<div class="container-fluid brewery-container">
 			<div class="container" id="brewery-details">
 				<div>
