@@ -70,11 +70,14 @@ body {
 }
 
 .jumbotron {
+	background-size: cover;
+	width: 100%;
 	min-height: auto;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
-	background-size: cover;
+	
+	background-image: <c:url value="/reviews/img/homepage/homepage.jpg/>;
 }
 
 .dashboard-buttons button {
@@ -92,8 +95,8 @@ body {
 	text-align: center;
 }
 #breweryBeers{
-	padding-left: 100px;
-	padding-right: 100px;
+/* 	padding-left: 100px; */
+/* 	padding-right: 100px; */
 	text-align: center;
 	font-size: 16px;
 }
