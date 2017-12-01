@@ -50,7 +50,9 @@ function initMap() {
 	var locations = [];
 	
 	<c:forEach var="brewery" items="${breweryList}">
-		locations.push({lat: ${brewery.latitude}, lng: ${brewery.longitude}});
+		<c:if test="${brewery.breweryId < 14}">
+			locations.push({lat: ${brewery.latitude}, lng: ${brewery.longitude}});
+		</c:if>
 	</c:forEach>
 	
 	
